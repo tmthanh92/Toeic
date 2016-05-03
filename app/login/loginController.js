@@ -4,7 +4,7 @@
 (function() {
   'use strict';
 
-  function LoginController($location, AuthenticationService, FlashService, UserService) {
+  function LoginController($location, AuthenticationService, FlashService, UserService, GoogleLoginService) {
     var vm = this;
 
     function login() {
@@ -48,6 +48,11 @@
           // and signed request each expire
           var uid = response.authResponse.userID;
           var accessToken = response.authResponse.accessToken;
+          console.log('Welcome!  Fetching your information.... ');
+          FB.api('/me', function(response) {
+            console.log('Successful login for: ' + response.name);
+           console.log( 'Thanks for logging in, ' + response.name + '!');
+          });
         } else if (response.status === 'not_authorized') {
           // the user is logged in to Facebook,
           // but has not authenticated your app
@@ -67,13 +72,18 @@
       });
     }
 
+    function googleLogin() {
+      GoogleLoginService.initClient();
+    }
+
     vm.login = login;
     vm.register = register;
     vm.logOut = logOut;
     vm.fbLogin = fbLogin;
+    vm.googleLogin = googleLogin;
   }
 
-  LoginController.$inject = ['$location', 'AuthenticationService', 'FlashService', 'UserService'];
+  LoginController.$inject = ['$location', 'AuthenticationService', 'FlashService', 'UserService', 'GoogleLoginService'];
 
   angular
     .module('app')
