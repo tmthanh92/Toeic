@@ -1,8 +1,11 @@
 .jetmenu .indicator {
   visibility: hidden;
 }
+#title {
+  margin: -20px 0 10px 85px;
+}
 #title img {
-  width: 200px;
+  width: 85px;
 }
 .custom-content-white {
   color: white;
