@@ -1,0 +1,18 @@
+.jetmenu .indicator {
+  visibility: hidden;
+}
+#title img {
+  width: 200px;
+}
+.custom-content-white {
+  color: white;
+}
+.box-info-item {
+  margin: 5px 0px;
+}
+.box-info-item a {
+  color: white;
+}
+.box-info-item a:hover {
+  text-decoration: underline;
+}

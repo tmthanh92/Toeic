@@ -1,0 +1,68 @@
+<div id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <div class="widget-title"></div>
+      </div>
+      <div class="modal-body">
+        <div class="tabbable">
+          <!-- Only required for left/right tabs-->
+          <ul class="nav nav-tabs">
+            <li class="active"><a onclick="event.preventDefault();" href="#logintab" data-toggle="tab">Đăng Nhập</a></li>
+            <li><a onclick="event.preventDefault();" href="#registertab" data-toggle="tab">Đăng ký</a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="logintab" class="tab-pane active">
+              <form id="loginform" method="post" name="loginform" action="#">
+                <div class="form-group">
+                  <div class="input-group"><span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" placeholder="Tên đăng nhập" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group"><span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <input type="password" placeholder="Mật khẩu" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Ghi nhớ
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                </div>
+              </form>
+            </div>
+            <div id="registertab" class="tab-pane">
+              <form id="registerform" method="post" name="registerform" action="#">
+                <div class="form-group">
+                  <input type="text" placeholder="Tên" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="text" placeholder="Họ" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="email" placeholder="Email" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="password" placeholder="Mật khẩu" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="text" placeholder="Nhập lại mật khẩu" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="submit" value="Đăng ký" class="btn btn-primary">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
