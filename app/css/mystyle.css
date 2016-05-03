@@ -16,3 +16,37 @@
 .box-info-item a:hover {
   text-decoration: underline;
 }
+.googleLogin span.icon {
+  background: url('../images/social-connect.png') no-repeat -255px 0;
+  display: inline-block;
+  width: 127px;
+  height: 34px;
+  cursor: pointer;
+}
+
+.fbLogin span.icon {
+  background: url('../images/social-connect.png') no-repeat top left;
+  display: inline-block;
+  width: 127px;
+  height: 34px;
+  cursor: pointer;
+}
+
+.socialSection {
+  width: 355px;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.socialLogin {
+  text-align: justify;
+  list-style: none;
+}
+
+span.socialText {
+  padding: 10px 0;
+}
+
+.wrapperSocialLogin {
+  margin-top: 50px;
+}
