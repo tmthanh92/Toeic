@@ -4,10 +4,12 @@
 (function() {
   'use strict';
 
-  function LoginController($location, AuthenticationService, FlashService, UserService, GoogleLoginService) {
+  function LoginController($location, AuthenticationService, FlashService, UserService, FbLoginService) {
     var vm = this;
 
     function login() {
+      alert('Your username: ' + vm.username + ' and your password: ' + vm.password);
+      return false;
       vm.dataLoading = true;
       AuthenticationService.Login(vm.username, vm.password, function(response) {
         if (response.success) {
@@ -38,7 +40,7 @@
       $location.path('/login');
     }
 
-    function fbLogin() {
+  /*  function fbLogin() {
       FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
           // the user is logged in and has authenticated your
@@ -70,10 +72,14 @@
           });
         }
       });
-    }
+    }*/
 
     function googleLogin() {
-      GoogleLoginService.initClient();
+     /* GoogleLoginService.initClient();*/
+    }
+
+    function fbLogin() {
+      FbLoginService.fbLogin();
     }
 
     vm.login = login;
@@ -83,7 +89,7 @@
     vm.googleLogin = googleLogin;
   }
 
-  LoginController.$inject = ['$location', 'AuthenticationService', 'FlashService', 'UserService', 'GoogleLoginService'];
+  LoginController.$inject = ['$location', 'AuthenticationService', 'FlashService', 'UserService', 'FbLoginService'];
 
   angular
     .module('app')

@@ -5,19 +5,18 @@
 (function(){
     'use strict'
 
-    function googleLoginService() {
+   /* function googleLoginService() {
         var service = {};
         var auth2;
 
-        service.initClient = initClient;
-        return service;
 
         function initClient() {
+
             gapi.load('auth2', function(){
-                /**
+                /!**
                  * Retrieve the singleton for the GoogleAuth library and set up the
                  * client.
-                 */
+                 *!/
                 auth2 = gapi.auth2.init({
                     client_id: '151431349905-7rsogqsqrgf0793jucoj90rjk0q8hpg4.apps.googleusercontent.com'
                 });
@@ -27,6 +26,19 @@
 
             });
         }
+        initClient();
+
+        // Load the SDK asynchronously
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://apis.google.com/js/api:client.js?onload=onLoadCallback";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'google-jssdk'));
+
+        return service;
+
 
         function onSuccess(user) {
             console.log('Signed in as ' + user.getBasicProfile().getName());
@@ -39,17 +51,9 @@
         function onFailure(error) {
             console.log(error);
         }
-    }
-    // Load the SDK asynchronously
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "https://apis.google.com/js/api:client.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'google-jssdk'));
-    angular
+    }*/
+    /*angular
         .module('app')
-        .factory('GoogleLoginService', googleLoginService)
+        .factory('GoogleLoginService', googleLoginService)*/
 
 }());

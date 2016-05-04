@@ -34,6 +34,12 @@
   height: 34px;
   cursor: pointer;
 }
+.fbLogin span.icon:hover {
+ padding-top: 1px;
+}
+.googleLogin span.icon:hover {
+  padding-top: 1px;
+}
 
 .socialSection {
   width: 355px;

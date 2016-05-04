@@ -5,7 +5,7 @@
     .module('app', ['ngRoute', 'ngCookies'])
     .config(config);
 
-    window.fbAsyncInit = function() {
+    /*window.fbAsyncInit = function() {
         FB.init({
             appId      : '270946653240452',
             cookie     : true,  // enable cookies to allow the server to access
@@ -34,7 +34,7 @@
         js = d.createElement(s); js.id = id;
         js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+    }(document, 'script', 'facebook-jssdk'));*/
 
 
   config.$inject = ['$routeProvider', '$locationProvider'];
