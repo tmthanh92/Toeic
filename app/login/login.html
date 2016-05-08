@@ -28,7 +28,7 @@
                 <div class="form-group">
                   <div class="checkbox">
                     <label>
-                      <input type="checkbox" ng-model="vm.remember"> Ghi nhớ
+                      <input type="checkbox" ng-model="vm.saveCookie"/> Ghi nhớ
                     </label>
                   </div>
                 </div>
@@ -42,28 +42,28 @@
                       <span class="icon" id="customBtn"></span>
                     </div>
                     <div class="fbLogin">
-                      <span class="icon"></span>
+                      <span class="icon" ng-click="vm.fbLogin();"></span>
                     </div>
                   </div>
                 </div>
               </form>
             </div>
             <div id="registertab" class="tab-pane">
-              <form id="registerform" method="post" name="registerform" action="#">
+              <form id="registerform" name="registerform" ng-submit="vm.register();">
                 <div class="form-group">
-                  <input type="text" placeholder="Tên" class="form-control">
+                  <input type="text" placeholder="Tên" class="form-control" ng-model="vm.user.firstName">
                 </div>
                 <div class="form-group">
-                  <input type="text" placeholder="Họ" class="form-control">
+                  <input type="text" placeholder="Họ" class="form-control" ng-model="vm.user.lastName">
                 </div>
                 <div class="form-group">
-                  <input type="email" placeholder="Email" class="form-control">
+                  <input type="email" placeholder="Email" class="form-control" ng-model="vm.user.email">
                 </div>
                 <div class="form-group">
-                  <input type="password" placeholder="Mật khẩu" class="form-control">
+                  <input type="password" placeholder="Mật khẩu" class="form-control" ng-model="vm.user.password">
                 </div>
                 <div class="form-group">
-                  <input type="text" placeholder="Nhập lại mật khẩu" class="form-control">
+                  <input type="text" placeholder="Nhập lại mật khẩu" class="form-control" ng-model="vm.user.repeatPassword">
                 </div>
                 <div class="form-group">
                   <input type="submit" value="Đăng ký" class="btn btn-primary">

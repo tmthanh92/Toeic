@@ -3,7 +3,7 @@
  */
 /** Facebook Login JavaScript SDK*/
 (function() {
-    function FbLoginService() {
+    function FbLoginService($location) {
         var service = {};
         function FacebookInit() {
             window.fbAsyncInit = function() {
@@ -58,6 +58,8 @@
                         console.log('Successful login for: ' + response.name);
                         console.log( 'Thanks for logging in, ' + response.name + '!');
                     });
+                    $('#loginmodal').modal('hide');
+                    $location.path('/home');
                 } else if (response.status === 'not_authorized') {
                     // the user is logged in to Facebook,
                     // but has not authenticated your app
@@ -69,15 +71,21 @@
                             FB.api('/me', function(response) {
                                 console.log('Good to see you, ' + response.name + '.');
                             });
+                            $('#loginmodal').modal('hide');
+                            $location.path('/home');
                         } else {
                             console.log('User cancelled login or did not fully authorize.');
                         }
+                    }, {
+                        scope: 'public_profile, email, publish_actions',
+                        return_scopes: true
                     });
                 }
             });
         }
 
     }
+    FbLoginService.inject = ['$location'];
     angular
         .module('app')
         .factory('FbLoginService', FbLoginService)

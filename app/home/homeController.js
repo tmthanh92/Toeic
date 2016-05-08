@@ -9,8 +9,14 @@
     .module('app')
     .controller('HomeController', HomeController);
 
-  function HomeController() {
-    var vm = this;
+  HomeController.inject = ['UserService'];
+  function HomeController(UserService) {
+  var vm = this;
+  vm.sendContact = sendContact;
+
+    function sendContact() {
+      UserService.SendContactInfo(vm.contact);
+    }
     
     $('.flexslider').flexslider({
       animation: "slide",
