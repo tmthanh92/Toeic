@@ -28,7 +28,7 @@
         }
 
         function GetByUsername(username) {
-            return $http.get('http://localhost:2958/api/users/' + username).then(handleSuccess, handleError('Error getting user by username'));
+            return $http.get('http://localhost/SeeEnglish/api/users/' + username).then(handleSuccess, handleError('Error getting user by username'));
         }
 
         function Create(user) {

@@ -75,7 +75,7 @@
     }*/
 
     function googleLogin() {
-      GoogleLoginService.initClient();
+      GoogleLoginService.InitClient();
     }
 
     function fbLogin() {
