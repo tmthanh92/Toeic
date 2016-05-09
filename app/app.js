@@ -52,6 +52,11 @@
         templateUrl: 'login/login.html',
         controllerAs: 'vm'
       })
+      .when('/test', {
+        controller: 'TestController',
+        templateUrl: 'entry_test/entryTest.html',
+        controllerAs: 'vm'
+      })
       .when('/', { redirectTo: '/home' });
   }
 

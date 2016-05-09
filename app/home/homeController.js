@@ -2,7 +2,7 @@
  * Created by MyPC on 4/23/2016.
  */
 
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -11,20 +11,20 @@
 
   HomeController.inject = ['UserService'];
   function HomeController(UserService) {
-  var vm = this;
-  vm.sendContact = sendContact;
+    var vm = this;
+    vm.sendContact = sendContact;
 
     function sendContact() {
       UserService.SendContactInfo(vm.contact);
     }
-    
+
     $('.flexslider').flexslider({
       animation: "slide",
       controlNav: false,
-      start: function(slider) {
+      start: function (slider) {
         $('body').removeClass('loading');
       }
     });
-
+    
   }
 })();

@@ -59,3 +59,171 @@ span.socialText {
 .wrapperSocialLogin {
   margin-top: 50px;
 }
+.wrapper-test-content {
+  padding: 20px 0;
+}
+@media (max-width: 768px) {
+  .wrapper-test-content .index-question-block {
+    position: relative;
+    margin-bottom: 20px;
+    max-height: 150px;
+  }
+}
+@media (min-width: 768px) {
+  .wrapper-test-content .index-question-block {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 200px;
+    z-index: 9999;
+    max-height: 300px;
+  }
+}
+.wrapper-test-content .index-question-block {
+  border: 1px solid #43609C;
+  background: white;
+  overflow-y: scroll;
+}
+.wrapper-test-content .index-question-block .timer-block {
+  font-size: 20px;
+  padding: 5px 0 0 5px !important;
+}
+.wrapper-test-content .index-question-block .timer-block .hours {
+  float: left;
+}
+.wrapper-test-content .index-question-block .timer-block .minutes {
+  float: left;
+}
+.wrapper-test-content .index-question-block .timer-block .seconds {
+  float: left;
+}
+.wrapper-test-content .index-question-block .timer-block .clearDiv {
+  clear: both;
+}
+.wrapper-test-content .index-question-block ul {
+  margin: 0 !important;
+  padding: 5px 0 0 5px !important;
+  zoom: 1 !important;
+  border: 0 !important;
+}
+.wrapper-test-content .index-question-block ul li {
+  float: left !important;
+  margin: 0 5px 5px 0 !important;
+  border: 1px solid #cfcfcf;
+  padding: 5px 0 5px 0 !important;
+  width: 30px !important;
+  text-align: center !important;
+  background-color: white;
+  cursor: pointer !important;
+  list-style-type: none !important;
+  background-image: none ! important;
+}
+.wrapper-test-content .audio-block {
+  display: table;
+  margin: auto;
+}
+.wrapper-test-content .question-block {
+  margin-top: 30px;
+  border-top: 1px solid gray;
+}
+.wrapper-test-content .question-block .title {
+  font-size: 18px;
+  border: 1px solid #43609C;
+  color: #43609C;
+  padding: 5px;
+  margin: 15px 0;
+  display: inline-block;
+}
+.wrapper-test-content .question-block img {
+  width: 100%;
+}
+.wrapper-test-content .question-block .question-content-block {
+  font-size: 14px;
+  font-weight: bold;
+}
+.wrapper-test-content .question-block .answer-block {
+  margin-top: 20px;
+  /* Hover and focus states */
+  /* Checked state */
+  /* Hover state whilst checked */
+  /* Disabled state */
+  /* Check mark */
+  /* Show check mark */
+  /* Checkbox tick */
+  /* Disabled tick colour */
+  /* Radio button inner circle */
+  /* Disabled circle colour */
+}
+.wrapper-test-content .question-block .answer-block .control {
+  font-size: 14px;
+  position: relative;
+  display: table;
+  margin-bottom: 15px;
+  padding-left: 30px;
+  cursor: pointer;
+}
+.wrapper-test-content .question-block .answer-block .control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.wrapper-test-content .question-block .answer-block .control__indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: #C1C1C1;
+}
+.wrapper-test-content .question-block .answer-block .control--radio .control__indicator {
+  border-radius: 50%;
+}
+.wrapper-test-content .question-block .answer-block .control:hover input ~ .control__indicator,
+.wrapper-test-content .question-block .answer-block .control input:focus ~ .control__indicator {
+  background: #AFAFAF;
+}
+.wrapper-test-content .question-block .answer-block .control input:checked ~ .control__indicator {
+  background: #43609C;
+}
+.wrapper-test-content .question-block .answer-block .control:hover input:not([disabled]):checked ~ .control__indicator,
+.wrapper-test-content .question-block .answer-block .control input:checked:focus ~ .control__indicator {
+  background: #43609C;
+}
+.wrapper-test-content .question-block .answer-block .control input:disabled ~ .control__indicator {
+  pointer-events: none;
+  opacity: .6;
+  background: #e6e6e6;
+}
+.wrapper-test-content .question-block .answer-block .control__indicator:after {
+  position: absolute;
+  display: none;
+  content: '';
+}
+.wrapper-test-content .question-block .answer-block .control input:checked ~ .control__indicator:after {
+  display: block;
+}
+.wrapper-test-content .question-block .answer-block .control--checkbox .control__indicator:after {
+  top: 4px;
+  left: 8px;
+  width: 3px;
+  height: 8px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+}
+.wrapper-test-content .question-block .answer-block .control--checkbox input:disabled ~ .control__indicator:after {
+  border-color: #7b7b7b;
+}
+.wrapper-test-content .question-block .answer-block .control--radio .control__indicator:after {
+  top: 7px;
+  left: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
+.wrapper-test-content .question-block .answer-block .control--radio input:disabled ~ .control__indicator:after {
+  background: #7b7b7b;
+}

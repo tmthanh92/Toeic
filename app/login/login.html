@@ -17,19 +17,17 @@
               <form id="loginform" name="loginform" ng-submit="vm.login();">
                 <div class="form-group">
                   <div class="input-group"><span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <input type="text" placeholder="Tên đăng nhập" class="form-control" ng-model="vm.username">
+                    <input type="email" name="email" placeholder="Email" class="form-control" ng-model="vm.username">
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="input-group"><span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                    <input type="password" placeholder="Mật khẩu" class="form-control" ng-model="vm.password">
+                    <input type="password" name="password" placeholder="Mật khẩu" class="form-control" ng-model="vm.password">
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="checkbox">
-                    <label>
-                      <input type="checkbox" ng-model="vm.saveCookie"/> Ghi nhớ
-                    </label>
+                    <label><input type="checkbox" ng-model="vm.saveCookie"/> Ghi nhớ</label>
                   </div>
                 </div>
                 <div class="form-group">
@@ -51,19 +49,19 @@
             <div id="registertab" class="tab-pane">
               <form id="registerform" name="registerform" ng-submit="vm.register();">
                 <div class="form-group">
-                  <input type="text" placeholder="Tên" class="form-control" ng-model="vm.user.firstName">
+                  <input type="text" placeholder="Tên" name="firstname" class="form-control" ng-model="vm.user.firstName">
                 </div>
                 <div class="form-group">
-                  <input type="text" placeholder="Họ" class="form-control" ng-model="vm.user.lastName">
+                  <input type="text" placeholder="Họ" name="lastname" class="form-control" ng-model="vm.user.lastName">
                 </div>
                 <div class="form-group">
-                  <input type="email" placeholder="Email" class="form-control" ng-model="vm.user.email">
+                  <input type="email" placeholder="Email" name="email" class="form-control" ng-model="vm.user.email">
                 </div>
                 <div class="form-group">
-                  <input type="password" placeholder="Mật khẩu" class="form-control" ng-model="vm.user.password">
+                  <input type="password" placeholder="Mật khẩu" name="password" class="form-control" ng-model="vm.user.password">
                 </div>
                 <div class="form-group">
-                  <input type="text" placeholder="Nhập lại mật khẩu" class="form-control" ng-model="vm.user.repeatPassword">
+                  <input type="text" placeholder="Nhập lại mật khẩu" name="confirmpassword" class="form-control" ng-model="vm.user.repeatPassword">
                 </div>
                 <div class="form-group">
                   <input type="submit" value="Đăng ký" class="btn btn-primary">
@@ -77,3 +75,90 @@
     </div>
   </div>
 </div>
+<script>
+  $(function(){ 
+    
+    $('#loginform').formValidation({ 
+      framework: 'bootstrap', 
+      fields: { 
+        email: { 
+          validators: { 
+            notEmpty: { 
+              message: 'The email address is required' 
+            }, 
+            emailAddress: { 
+              message: 'The input is not a valid email address' 
+            } 
+          } 
+        }, 
+        password: {
+          validators: { 
+            notEmpty: { 
+              message: 'The password is required' 
+            } 
+          } 
+        } 
+      } 
+    }); 
+  
+    $('#registerform').formValidation({
+      framework: 'bootstrap',
+      fields: {
+        firstname: {
+          validators: {
+            notEmpty: {
+              message: 'The firstname is required'
+            },
+            stringLength: {
+              min: 2,
+              message: 'The firstname must be more than 2 characters long'
+            }
+          }
+        },
+        lastname: {
+          validators: {
+            notEmpty: {
+              message: 'The lastname is required'
+            },
+            stringLength: {
+              min: 2,
+              message: 'The lastname must be more than 2 characters long'
+            }
+          }
+        },
+        email: {
+          validators: {
+            notEmpty: {
+              message: 'The email address is required'
+            },
+            emailAddress: {
+              message: 'The input is not a valid email address'
+            }
+          }
+        },
+        password: {
+          validators: {
+            notEmpty: {
+              message: 'The password is required'
+            },
+            identical: {
+              field: 'confirmpassword',
+              message: 'The password and its confirm are not the same'
+            }
+          }
+        },
+        confirmpassword: {
+          validators: {
+            notEmpty: {
+              message: 'The password is required'
+            },
+            identical: {
+              field: 'password',
+              message: 'The password and its confirm are not the same'
+            }
+          }
+        }
+      }
+    });
+  });
+</script>
