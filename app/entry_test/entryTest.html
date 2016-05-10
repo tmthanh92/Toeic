@@ -172,3 +172,55 @@
         </div>
     </div>
 </div>
+
+<script>
+    // function getRadioOptions(){
+    //     var questions = $('.question-block').find('input[type="radio"]:first')
+    //     var options  = {};
+    //     var rules = {
+    //       validators: {
+    //         notEmpty: {
+    //           message: 'The name is required'
+    //         }
+    //       }
+    //     };
+    //     questions.each(function (){
+    //        var questionname = $(this).attr('name');
+    //        options[questionname] = rules;
+    //     });
+    //     return options;
+    // }
+    // $('#entry-test-frm').formValidation({
+    //   framework: 'bootstrap',
+    //   fields: getRadioOptions()
+    // });
+    var indexQuestions = $('.index-question-block').find('li');
+    $('#entry-test-frm').on('submit', function() {
+        var emptyCount = 0;
+        $('.question-block').each(function() {
+            var found = false;
+            var idAttr = $(this).attr('id');
+            var id = idAttr.split('q').length > 1 ? idAttr.split('q')[1] : '';
+            $(this).find('input[type=radio]').each(function() {
+                if ($(this).prop('checked')) {
+                    found = true;
+                    return;
+                }
+            });
+            if (!found) {
+                emptyCount++;
+                if (!isNaN(parseInt(id))) {
+                    indexQuestions.filter(function () {
+                        if ($(this).text() === id) {
+                            $(this).css({ 'background': '#FDB53F' });
+                        }
+                    });
+                }
+            }
+        });
+        if (emptyCount > 0) {           
+            return false;
+        }
+        return true;
+    });
+</script>
