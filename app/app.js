@@ -76,21 +76,6 @@
                 //$location.path('/login');
                 event.preventDefault();
                 $('#loginmodal').modal('show');
-                    /*var modalInstance = $uibModal.open({
-                    templateUrl: 'login/login.html',
-                    controller: 'LoginController',
-                    resolve: {
-                        myparameter: function() {
-                            return 'teste param';
-                        }
-                    },
-                    size: 50
-                });
-                modalInstance.result.then(function () {
-                    alert('Success');
-                }, function () {
-                    alert('Failed');
-                });*/
             }
         });
     }

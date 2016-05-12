@@ -227,3 +227,35 @@ span.socialText {
 .wrapper-test-content .question-block .answer-block .control--radio input:disabled ~ .control__indicator:after {
   background: #7b7b7b;
 }
+
+.parent {
+  display: flex;
+  width: 440px;
+  height: 110px;
+  margin: 20px 0 0 0;
+}
+
+#free_test {
+  background: #C0504D !important;
+}
+
+.narrow {
+  width: 290px;
+  background: #3B5998;
+  padding: 0 10px ;
+  /* Just so it's visible */
+}
+.parent p {
+  color: white;
+}
+.parent a span {
+  color: #FFC000;
+}
+
+.wide {
+  flex: 1;
+  /* Grow to rest of container */
+  background: #31849B;
+  text-align: center;
+  /* Just so it's visible */
+}
