@@ -56,7 +56,11 @@
         }
 
         function SendContactInfo(contactUserInfo) {
-            return $http.post('http://localhost:2958/api/users/', contactUserInfo).then(handleSuccess, handleError('Error creating user'));
+            return $http.post('http://localhost:3521/api/guest/create', contactUserInfo, {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(handleSuccess, handleError('Error creating user'));
         }
     }
 
