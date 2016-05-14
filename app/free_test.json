@@ -1,0 +1,1836 @@
+[
+  {
+  "partTitle": "Part 1: ",
+  "partContent" : "Choose the statement that best describes what you see in the picture.",
+  "answerQuantity": 4,
+  "questionContent": [
+    {
+        "video": "",
+        "imageUrl": "http://ece.com.vn/wp-content/uploads/2015/08/12.png",
+        "questionOrder": "1.",
+        "content": "",
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "",
+            "isCorrect": "false"
+          }
+        ]
+    },
+    {
+      "video": "",
+      "imageUrl": "http://ece.com.vn/wp-content/uploads/2015/08/11.png",
+      "questionOrder": 2,
+      "content": "",
+      "answerContent": [
+        {
+          "name": "A",
+          "content": "",
+          "isCorrect": "true"
+        },
+        {
+          "name": "B",
+          "content": "",
+          "isCorrect": "false"
+        },
+        {
+          "name": "C",
+          "content": "",
+          "isCorrect": "false"
+        },
+        {
+          "name": "D",
+          "content": "",
+          "isCorrect": "false"
+        }
+      ]
+    },
+    {
+      "video": "",
+      "imageUrl": "http://ece.vn/wp-content/uploads/2014/06/u-5-3.jpg",
+      "questionOrder": 3,
+      "content": "",
+      "answerContent": [
+        {
+          "name": "A",
+          "content": "",
+          "isCorrect": "true"
+        },
+        {
+          "name": "B",
+          "content": "",
+          "isCorrect": "false"
+        },
+        {
+          "name": "C",
+          "content": "",
+          "isCorrect": "false"
+        },
+        {
+          "name": "D",
+          "content": "",
+          "isCorrect": "false"
+        }
+      ]
+    },
+    {
+      "video": "",
+      "imageUrl": "http://ece.vn/wp-content/uploads/2014/06/u-5-4.jpg",
+      "questionOrder": 4,
+      "content": "",
+      "answerContent": [
+        {
+          "name": "A",
+          "content": "",
+          "isCorrect": "true"
+        },
+        {
+          "name": "B",
+          "content": "",
+          "isCorrect": "false"
+        },
+        {
+          "name": "C",
+          "content": "",
+          "isCorrect": "false"
+        },
+        {
+          "name": "D",
+          "content": "",
+          "isCorrect": "false"
+        }
+      ]
+    },
+    {
+      "video": "",
+      "imageUrl": "http://ece.vn/wp-content/uploads/2014/06/u-5-5.jpg",
+      "questionOrder": 5,
+      "content": "",
+      "answerContent": [
+        {
+          "name": "A",
+          "content": "",
+          "isCorrect": "true"
+        },
+        {
+          "name": "B",
+          "content": "",
+          "isCorrect": "false"
+        },
+        {
+          "name": "C",
+          "content": "",
+          "isCorrect": "false"
+        },
+        {
+          "name": "D",
+          "content": "",
+          "isCorrect": "false"
+        }
+      ]
+    }
+  ]
+},
+  {
+    "partTitle": "Part 2: ",
+    "partContent" : "Listen to the questions and choose the best answer.",
+    "answerQuantity": 3,
+    "questionContent": [
+      {
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 1,
+        "content": "",
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 2,
+        "content": "",
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 3,
+        "content": "",
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 4,
+        "content": "",
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "",
+            "isCorrect": "false"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "partTitle": "Part 3: ",
+    "partContent" : "Choose the best answer to each question.",
+    "answerQuantity": 4,
+    "questionContent": [
+      {
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 1,
+        "content": "Why did Lisa quit her old job?",
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "She didn’t like her boss",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "The pay was too low",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "She got offered a better job",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "She never got a raise",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 2,
+        "content": "When did she apply for a job?",
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "Three weeks ago",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "One week ago",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "Four weeks ago",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "Two weeks ago",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "What is true about Lisa’s new job?",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 3,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "The hours are longer, but the pay is more",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "The hours are shorter, but the pay is less",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "The hours and pay are the same, but she likes it more",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "The hours are shorter, and the pay is more",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "What does the man want to do?",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 4,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "Buy lunch for jean",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "Have breakfast with Jean",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "Have lunch",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "Buy dinner for jean",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "Why can’t Jean go with Steve?",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 5,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "She has a business meeting to go to",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "She is not hungry",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "She has no money",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "Steve is eating a business lunch",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "What is true about Steve?",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 6,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "He is annoyed",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "He knows some good restaurants nearby",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "He will take her tomorrow",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "He has a busy day",
+            "isCorrect": "false"
+          }
+        ]
+      }
+    ]
+  },
+  {
+  "partTitle": "Part 4: ",
+  "partContent" : "Short talks",
+  "answerQuantity": 4,
+  "questionContent": [
+    {
+      "video": "",
+      "imageUrl": "",
+      "questionOrder": 1,
+      "content": ". Swing shift jobs are during what ties of the day?",
+      "answerContent": [
+        {
+          "name": "A",
+          "content": "9:00 am – 5:00 pm",
+          "isCorrect": "true"
+        },
+        {
+          "name": "B",
+          "content": "5:00 pm – 01:00 am",
+          "isCorrect": "false"
+        },
+        {
+          "name": "C",
+          "content": "11:00 pm – 7:00 am",
+          "isCorrect": "false"
+        },
+        {
+          "name": "D",
+          "content": "4:30 am – 6:00 pm",
+          "isCorrect": "false"
+        }
+      ]
+    },
+    {
+      "video": "",
+      "imageUrl": "",
+      "questionOrder": 2,
+      "content": "When do people on graveyard shifts usually work?",
+      "answerContent": [
+        {
+          "name": "A",
+          "content": "During the day",
+          "isCorrect": "true"
+        },
+        {
+          "name": "B",
+          "content": "During the night",
+          "isCorrect": "false"
+        },
+        {
+          "name": "C",
+          "content": "On the weekends",
+          "isCorrect": "false"
+        },
+        {
+          "name": "D",
+          "content": "Only during holidays",
+          "isCorrect": "false"
+        }
+      ]
+    },
+    {
+      "content": "What is flex-time?",
+      "video": "",
+      "imageUrl": "",
+      "questionOrder": 3,
+      "answerContent": [
+        {
+          "name": "A",
+          "content": "You work eight to four",
+          "isCorrect": "true"
+        },
+        {
+          "name": "B",
+          "content": "You can choose your own hours",
+          "isCorrect": "false"
+        },
+        {
+          "name": "C",
+          "content": "You work at night",
+          "isCorrect": "false"
+        },
+        {
+          "name": "D",
+          "content": "You work only during the day",
+          "isCorrect": "false"
+        }
+      ]
+    },
+    {
+      "content": "How many hours a day did the person work in his old?",
+      "video": "",
+      "imageUrl": "",
+      "questionOrder": 4,
+      "answerContent": [
+        {
+          "name": "A",
+          "content": "Six",
+          "isCorrect": "true"
+        },
+        {
+          "name": "B",
+          "content": "Eight",
+          "isCorrect": "false"
+        },
+        {
+          "name": "C",
+          "content": "Ten",
+          "isCorrect": "false"
+        },
+        {
+          "name": "D",
+          "content": "Twelve",
+          "isCorrect": "false"
+        }
+      ]
+    },
+    {
+      "content": "What kinds of benefits does his new job have?",
+      "video": "",
+      "imageUrl": "",
+      "questionOrder": 5,
+      "answerContent": [
+        {
+          "name": "A",
+          "content": "Medical insurance",
+          "isCorrect": "true"
+        },
+        {
+          "name": "B",
+          "content": "Home insurance",
+          "isCorrect": "false"
+        },
+        {
+          "name": "C",
+          "content": "Life insurance",
+          "isCorrect": "false"
+        },
+        {
+          "name": "D",
+          "content": "A company car",
+          "isCorrect": "false"
+        }
+      ]
+    },
+    {
+      "content": "How does the man save money on gasoline?",
+      "video": "",
+      "imageUrl": "",
+      "questionOrder": 6,
+      "answerContent": [
+        {
+          "name": "A",
+          "content": "By taking the bus",
+          "isCorrect": "true"
+        },
+        {
+          "name": "B",
+          "content": "By walking to work",
+          "isCorrect": "false"
+        },
+        {
+          "name": "C",
+          "content": "By parking close to the office",
+          "isCorrect": "false"
+        },
+        {
+          "name": "D",
+          "content": "By riding whit a co-worker",
+          "isCorrect": "false"
+        }
+      ]
+    }
+  ]
+},
+  {
+    "partTitle": "Part 5: ",
+    "partContent" : "Incomplete Sentences ",
+    "answerQuantity": 4,
+    "questionContent": [
+      {
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 1,
+        "content": "Johnny continued to make ……………., though he was told not to.",
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "noisy",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "sounded",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "loud",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "noise",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 2,
+        "content": "…………….what to do, he just waited until his father arrived.",
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "Know not",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "Not know",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "No knowing",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "Not knowing",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "He has traveled to Africa before, …………..?",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 3,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "does he",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "doesn’t he",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "has he",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "hasn’t he",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "Mike …………..repaired the car.",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 4,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "did not",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "does not have",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "did not have",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "has not",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "I’m afraid we……………the day very much.",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 5,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "not enjoyed",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "enjoyed not",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "didn’t enjoy",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "didn’t enjoyed",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "Didn’t you ………….the exam? No, I did not.",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 6,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "succeed",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "pass",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "success",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "graduate",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "I would like you……………go out with him at night.",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 7,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "no",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "not",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "no to",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "not to",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "He may ……………been there before.",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 8,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "not have",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "have to",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "haven’t",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "has not",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "My grandfather moves slowly and speaks…………..",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 9,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "quiet",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "with quiet",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "quietly",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "in quiet",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "Mr. Lee…………….better than he writes.",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 10,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "speaks",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "tells",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "told",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "asks",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "Roger …………….nor flowers when he was in prison.",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 11,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "neither saw birds",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "saw birds neither",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "saw neither birds",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "neither did birds",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "Venus ……………the closest planet to the sun; Mercury is.",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 12,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "is no",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "is not",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "no is",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "not is",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "On my trip to Italy, I lost a suitcase, broke my glasses, and ……………my flight home.",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 13,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "miss",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "missed",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "did miss",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "missing",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "The children enjoy playing in the sand and ………….in the ocean.",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 14,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "to swim",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "swimming",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "swim",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "likes swimming",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "Let’s ……………..the art gallery first, and then have some lunch.",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 15,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "trip",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "journey",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "visit",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "turn up",
+            "isCorrect": "false"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "partTitle": "Part 6: ",
+    "partContent" : "Incomplete Texts ",
+    "questionContent": [
+      {
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 1,
+        "content": "",
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "all",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "every",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "each",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "much",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 2,
+        "content": "",
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "to",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "with",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "in",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "for",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 3,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "set",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "put",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "held",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "designed",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 4,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "application",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "applying",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "apply",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "applicable",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 5,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "entering",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "coming",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "going",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "visiting",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 6,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "pleasure",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "regret",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "sorrow",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "happy",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 7,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "interesting",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "interest",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "interested",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "interests",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 8,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "listened",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "heard",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "listen",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "hear",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 9,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "still",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "yet",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "until",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "after",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 10,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "every",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "each",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "most",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "all",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 11,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "commences",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "finishes",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "opens",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "exceeds",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 12,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "cooperate",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "cooperating",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "cooperates",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "cooperation",
+            "isCorrect": "false"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "partTitle": "Part 7: ",
+    "partContent" : "Reading Comprehension ",
+    "questionContent": [
+      {
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 1,
+        "content": "What is the name of the coffee shop?",
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "The Valued Customer",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "The London Coffee Shop",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "The Orange Cat",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "The Open Letter",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 2,
+        "content": "What does the coffee shop plan to stop using?",
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "Coffee",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "Coffee coupons",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "Coffee beans",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "Low prices",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "Coupons will continue to be accepted until when?",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 3,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "The end of this month",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "The end of next month",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "The beginning of this month",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "The end of the year",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "According to this notice, smoking is not allowed in which of the following?",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 4,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "The break-room",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "Restrooms",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "The parking area",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "A and B",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "What is the allowed length of time for smoke breaks?",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 5,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "Five minutes for each hour of work.",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "Five minutes for every two hours of work.",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "Ten minutes for each hour of work.",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "It is not stated in the notice.",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "If workers feel that the smoking policy is unfair, whom should they contact?",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 6,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "A co-worker",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "The company owner",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "The fire department",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "A department supervisor",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "What will happen next month?",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 7,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "All smokers will be monitored.",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "Bonuses will be given to people who stop smoking.",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "People will be discriminated against.",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "Department supervisors will contact all workers.",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "According to the article, what does punctuality mean?",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 8,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "Having good punctuation when writing",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "Being where you should",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "Being successful",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "Being where you should, when you should",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "According to this article, what is true about successful people?",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 9,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "They are late, don’t ask questions, and never learn new things.",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "They are late, don’t ask questions, and try to learn new things.",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "They are late, ask questions, and try to learn new things.",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "They aren’t late, ask questions, and try to learn new things.",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "What does MYOB mean?",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 10,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "That you should study about business in school",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "That you should not get involved in office gossip",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "That you should prepare to own your own business",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "That you should talk a lot about other people",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "What are the steps of failure?",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 11,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "Being late, not asking anything, gossiping, and not learning",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "Being late, asking anything, talking about others, and not learning",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "Being punctual, not asking anything, gossiping, and not learning",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "Being late, not asking anything, not learning, and not gossiping",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "Which type of category id the theft related to ?",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 12,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "Home",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "Work",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "A store",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "A person",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "According to the information above, taking which item would most likely be considered theft?",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 13,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "Pencils",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "A ashtray",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "A computer monitor",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "A ruler",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "According to the chart, which item are employees likely to take home from work most often?",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 14,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "Pens and pencils",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "Desktop items",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "Computer accessories",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "Computer programs",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "How many people took part in the survey?",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 15,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "25-35",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "2 years",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "100",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "80 percent",
+            "isCorrect": "false"
+          }
+        ]
+      },
+      {
+        "content": "If workers feel that the smoking policy is unfair, whom should they contact?",
+        "video": "",
+        "imageUrl": "",
+        "questionOrder": 16,
+        "answerContent": [
+          {
+            "name": "A",
+            "content": "About $10",
+            "isCorrect": "true"
+          },
+          {
+            "name": "B",
+            "content": "Less than $5",
+            "isCorrect": "false"
+          },
+          {
+            "name": "C",
+            "content": "It depends",
+            "isCorrect": "false"
+          },
+          {
+            "name": "D",
+            "content": "Very expensive",
+            "isCorrect": "false"
+          }
+        ]
+      }
+    ]
+  }
+]

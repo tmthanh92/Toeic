@@ -66,23 +66,41 @@
             <div class="col-lg-3 col-md-3 col-sm-12"></div>
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <form id="entry-test-frm" action="#" name="entrytestfrm" method="post">
-                    <div id="q1" class="question-block">
+                    <div  ng-repeat="question in vm.questionData">
+                        <div id="q1" class="question-block">
+                            <div class="title">{{question.partTitle}}{{question.partContent}}</div>
+                            <div ng-repeat="qContent in question.questionContent">
+                                <div class="title">{{qContent.questionOrder}}. {{qContent.content}}</div>
+                                <img src="{{qContent.imageUrl}}" alt="">
+                                <div class="answer-block">
+                                    <div class="control-group" ng-repeat="aContent in qContent.answerContent">
+                                        <label class="control control--radio">
+                                            <input type="radio" name="q1" value="{{aContent.name}}">{{aContent.name}}. {{aContent.content}}
+                                            <div class="control__indicator"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div id="q1" class="question-block">
+                        <div class="title">{{vm.questionData[1].partTitle}}</div>
                         <div class="title">Câu 1</div><img src="http://toeic365.com/courses/wp-content/uploads/2014/09/example.png" alt="">
                         <div class="answer-block">
                             <div class="control-group">
-                                <label class="control control--radio">
+                                <label class="control control&#45;&#45;radio">
                           <input type="radio" name="q1" value="a">A
                           <div class="control__indicator"></div>
                         </label>
-                                <label class="control control--radio">
+                                <label class="control control&#45;&#45;radio">
                           <input type="radio" name="q1" value="b">B
                           <div class="control__indicator"></div>
                         </label>
-                                <label class="control control--radio">
+                                <label class="control control&#45;&#45;radio">
                           <input type="radio" name="q1" value="c">C
                           <div class="control__indicator"></div>
                         </label>
-                                <label class="control control--radio">
+                                <label class="control control&#45;&#45;radio">
                           <input type="radio" name="q1" value="d">D
                           <div class="control__indicator"></div>
                         </label>
@@ -93,19 +111,19 @@
                         <div class="title">Câu 2</div><img src="http://toeic365.com/courses/wp-content/uploads/2014/09/example.png" alt="">
                         <div class="answer-block">
                             <div class="control-group">
-                                <label class="control control--radio">
+                                <label class="control control&#45;&#45;radio">
                           <input type="radio" name="q2" value="a">A
                           <div class="control__indicator"></div>
                         </label>
-                                <label class="control control--radio">
+                                <label class="control control&#45;&#45;radio">
                           <input type="radio" name="q2" value="b">B
                           <div class="control__indicator"></div>
                         </label>
-                                <label class="control control--radio">
+                                <label class="control control&#45;&#45;radio">
                           <input type="radio" name="q2" value="c">C
                           <div class="control__indicator"></div>
                         </label>
-                                <label class="control control--radio">
+                                <label class="control control&#45;&#45;radio">
                           <input type="radio" name="q2" value="d">D
                           <div class="control__indicator"></div>
                         </label>
@@ -116,19 +134,19 @@
                         <div class="title">Câu 3</div>
                         <div class="answer-block">
                             <div class="control-group">
-                                <label class="control control--radio">
+                                <label class="control control&#45;&#45;radio">
                           <input type="radio" name="q3" value="a">A
                           <div class="control__indicator"></div>
                         </label>
-                                <label class="control control--radio">
+                                <label class="control control&#45;&#45;radio">
                           <input type="radio" name="q3" value="b">B
                           <div class="control__indicator"></div>
                         </label>
-                                <label class="control control--radio">
+                                <label class="control control&#45;&#45;radio">
                           <input type="radio" name="q3" value="c">C
                           <div class="control__indicator"></div>
                         </label>
-                                <label class="control control--radio">
+                                <label class="control control&#45;&#45;radio">
                           <input type="radio" name="q3" value="d">D
                           <div class="control__indicator"></div>
                         </label>
@@ -143,25 +161,25 @@
                             the accounting office the following information: </div>
                         <div class="answer-block">
                             <div class="control-group">
-                                <label class="control control--radio">
+                                <label class="control control&#45;&#45;radio">
                           <input type="radio" name="q4" value="a">A
                           <div class="control__indicator"></div>
                         </label>
-                                <label class="control control--radio">
+                                <label class="control control&#45;&#45;radio">
                           <input type="radio" name="q4" value="b">B
                           <div class="control__indicator"></div>
                         </label>
-                                <label class="control control--radio">
+                                <label class="control control&#45;&#45;radio">
                           <input type="radio" name="q4" value="c">C
                           <div class="control__indicator"></div>
                         </label>
-                                <label class="control control--radio">
+                                <label class="control control&#45;&#45;radio">
                           <input type="radio" name="q4" value="d">D
                           <div class="control__indicator">   </div>
                         </label>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                     <hr>
                     <div class="pull-right">
                         <input type="submit" value="Nộp bài" class="btn btn-primary large">

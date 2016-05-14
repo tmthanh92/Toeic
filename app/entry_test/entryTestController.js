@@ -3,7 +3,34 @@
  */
 (function () {
 
-    function TestController($location, AuthenticationService, FlashService, UserService, FbLoginService) {
+    function TestController($location, AuthenticationService, FlashService, UserService, FbLoginService, $q, $http) {
+
+        var vm = this;
+
+        vm.questionData = [];
+
+        function GetQuestionData() {
+            var deferred = $q.defer();
+            $http.get('free_test.json').
+            success(function(data, status, headers, config) {
+                deferred.resolve(data);
+            }).
+            error(function(data, status, headers, config) {
+                deferred.reject(status);
+            });
+            return deferred.promise;
+        }
+
+        GetQuestionData().then(function(data) {
+                vm.questionData = data;
+        },
+        function() {
+            alert('Error when loading data');
+        })
+
+
+
+
         $('.timer').startTimer();
 
         $('.index-question-block').find('li').on('click', function () {
@@ -33,7 +60,7 @@
         });
     }
 
-    TestController.inject = ['$location', 'AuthenticationService', 'FlashService', 'UserService', 'FbLoginService'];
+    TestController.inject = ['$location', 'AuthenticationService', 'FlashService', 'UserService', 'FbLoginService', '$q', '$http'];
     angular
         .module('app')
         .controller('TestController', TestController);
