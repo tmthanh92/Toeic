@@ -7,15 +7,18 @@
   function LoginController($location, AuthenticationService, FlashService, UserService, FbLoginService, GoogleLoginService) {
     var vm = this;
 
+    vm.isLoggingIn = false;
     function login() {
       vm.dataLoading = true;
       AuthenticationService.Login(vm.username, vm.password, function(response) {
         if (response.success) {
           AuthenticationService.SetCredentials(vm.username, vm.password);
           $location.path('/home');
+          vm.isLoggingIn = true;
         } else {
-          FlashService.Error(response.message);
-          vm.dataLoading = false;
+        /*  FlashService.Error(response.message);
+          vm.dataLoading = false;*/
+          vm.isLoggingIn = false;
         }
       });
     }
@@ -35,7 +38,7 @@
     }
 
     function logOut() {
-      $location.path('/login');
+      vm.isLoggingIn = false;
     }
 
 

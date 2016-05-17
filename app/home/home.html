@@ -7,9 +7,8 @@
     </ul>
   </div>
 </section>-->
-<div class="course_list_wrapper col-md-4" >
-  <h2>CHỌN CÁC KHÓA HỌC THEO NHU CẦU</h2>
-  <div class="parent">
+<div class="course_list_wrapper col-lg-3 col-md-3 col-sm-12" >
+  <div class="parent" >
     <div class="wide" id="free_test">
       <p>FREE TEST</p>
     </div>
@@ -59,27 +58,39 @@
 <div class="container">
   <div class="general_wrapper clearfix">
     <div class="col-lg-3 col-md-3 col-sm-12"> </div>
-    <div class="col-lg-9 col-md-9 col-sm-12">
+    <div class="col-lg-4 col-md-9 col-sm-12" style="float: right">
       <form id="form-send-info" name="contactform" ng-submit="vm.sendContact();">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="col-lg-12 col-md-9 col-sm-12 col-xs-12">
+          <label id="contact-font"><b>Gửi thông tin để nhận các tài liệu tiếng Anh và được SEE ENGLISH tư vấn miễn phí</b></label>
           <div class="form-group">
             <input id="name" type="text" name="name" placeholder="Tên" class="form-control" ng-model="vm.contact.name">
           </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <div class="form-group">
             <input id="phone" type="text" name="phone" placeholder="Số điện thoại" class="form-control" ng-model="vm.contact.phoneNumber">
           </div>
           <div class="form-group">
             <input id="email" type="email" name="email" placeholder="Email" class="form-control" ng-model="vm.contact.email">
           </div>
+          <div class="form-group">
+            <label class="radio-inline"><input type="radio" name="career" ng-model="vm.contact.career" ng-value="'Học sinh'">Học sinh</label>
+            <label class="radio-inline"><input type="radio" name="career" ng-model="vm.contact.career" ng-value="'Sinh viên'">Sinh viên</label>
+            <label class="radio-inline"><input type="radio" name="career" ng-model="vm.contact.career" ng-value="'Đi làm'">Đi làm</label>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <!--<div class="form-group">
+            <input id="phone" type="text" name="phone" placeholder="Số điện thoại" class="form-control" ng-model="vm.contact.phoneNumber">
+          </div>
+          <div class="form-group">
+            <input id="email" type="email" name="email" placeholder="Email" class="form-control" ng-model="vm.contact.email">
+          </div>-->
         </div>
         <div class="clearfix"></div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div class="form-group">
             <textarea id="comments" name="comments" rows="6" placeholder="Lời nhắn ..." class="form-control" ng-model="vm.contact.message"></textarea>
           </div>
-        </div>
+        </div>-->
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div class="pull-right">
             <div class="form-group">
@@ -135,6 +146,13 @@
             regexp: {
               regexp: /^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i,
               message: 'The input is not a valid phone number'
+            }
+          }
+        },
+        career: {
+          validators: {
+            notEmpty: {
+              message: 'Please choose your job'
             }
           }
         }

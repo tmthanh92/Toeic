@@ -11,7 +11,7 @@
 
         function GetQuestionData() {
             var deferred = $q.defer();
-            $http.get('free_test.json').
+            $http.get('http://localhost/SeeEnglish/Api/Examination').
             success(function(data, status, headers, config) {
                 deferred.resolve(data);
             }).

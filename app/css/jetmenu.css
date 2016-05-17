@@ -10,7 +10,8 @@
 }
 .jetmenu li {
   display: inline-block;
-  float: left;
+  /*float: left;*/
+  float: right;
 }
 .jetmenu a {
   transition: all .3s linear;

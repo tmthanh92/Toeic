@@ -3,8 +3,8 @@
 
   angular
     .module('app', ['ngRoute', 'ngCookies'])
-    .config(config)
-    .run(run);
+    .config(config);
+  /*  .run(run);*/
     /*window.fbAsyncInit = function() {
         FB.init({
             appId      : '270946653240452',

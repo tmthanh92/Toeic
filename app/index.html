@@ -27,33 +27,30 @@
       <div class="container">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div class="callus">
-            <p><span><i class="fa fa-envelope-o"></i> support@toeiccenter.com</span><span><i class="fa fa-phone"></i> +09 264 222 21 21</span></p>
+            <p><span><i class="fa fa-envelope-o"></i> support@toeiccenter.com</span><span><i class="fa fa-phone"></i> 09 777 839 20</span></p>
           </div>
           <!-- end callus-->
         </div>
         <!-- end col-lg-6-->
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div class="marketing">
-            <ul class="topflags pull-right">
+            <!--<ul class="topflags pull-right">
               <li>
                 <a data-placement="bottom" data-toggle="tooltip" data-original-title="VietNam" title="" href="#"><img alt="de" src="images/flags/vn.png"></a>
               </li>
               <li>
                 <a data-placement="bottom" data-toggle="tooltip" data-original-title="English" title="" href="#"><img alt="tr" src="images/flags/us.png"></a>
               </li>
-            </ul>
-            <ul class="topmenu pull-right">
-              <li><a href="#" onclick="event.preventDefault();" data-toggle="modal" data-target="#loginmodal"><i class="fa fa-lock"></i> Đăng nhập / Đăng ký</a></li>
-            </ul>
+            </ul>-->
             <!-- topmenu-->
-            <div id="dmsearch" class="dmsearch">
+           <!-- <div id="dmsearch" class="dmsearch">
               <form id="searchform" action="#" method="get">
                 <div class="dm-search-container">
                   <input id="s" type="text" name="s" value="" placeholder="Tìm kiếm" class="dmsearch-input">
                 </div>
                 <input id="go" type="submit" value="" class="dmsearch-submit"><span class="searchicon"></span>
               </form>
-            </div>
+            </div>-->
           </div>
         </div>
         <div ng-include src="'login/login.html'"></div>
@@ -61,7 +58,7 @@
     </div>
     <header class="header-wrapper">
       <div class="container">
-        <div class="site-header clearfix">
+        <div class="site-header clearfix" ng-controller="LoginController as vm">
           <div class="col-lg-3 col-md-3 col-sm-12 title-area pull-left">
             <div id="title" class="site-title">
               <a href="#" title=""><img src="images/logosee2.png" alt=""></a>
@@ -73,9 +70,7 @@
             <div id="nav">
               <div class="container clearfix">
                 <ul id="jetmenu" class="jetmenu blue">
-                  <li class="active"><a href="#/home"><i class="fa fa-home"></i> Trang chủ</a></li>
-                  <li><a href="#">Giới thiệu</a></li>
-                  <li><a href="#">Chương trình học</a>
+                  <!--<li><a href="#">Chương trình học</a>
                     <ul class="dropdown">
                       <li><a href="#">Tổng quan</a></li>
                       <li><a href="#">Harvard ManageMentor</a></li>
@@ -83,15 +78,25 @@
                       <li><a href="#">English for Corporate</a></li>
                     </ul>
                   </li>
-                  <li><a href="#/test">Thi thử</a></li>
-                  <li><a href="#">Sự kiện</a></li>
-                  <li><a href="#">Thư viện</a></li>
-                  <li class="right"><a href="contact.html"><i class="fa fa-envelope-o"></i> Liên hệ</a></li>
+
+                  <li><a href="#">Thư viện</a></li>-->
+                <li><a href="#/test">Thi thử</a></li>
+                <li class="right"><a href="contact.html"><i class="fa fa-envelope-o"></i> Liên hệ</a></li>
+                <li><a href="#">Thông tin</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li class="active"><a href="#/home"><i class="fa fa-home"></i> Trang chủ</a></li>
                 </ul>
               </div>
             </div>
             <!-- nav-->
           </div>
+            <ul class="login-section topmenu pull-right" ng-hide="vm.isLoggingIn">
+                <li><a href="#" onclick="event.preventDefault();" data-toggle="modal" data-target="#loginmodal"> Đăng nhập / Đăng ký</a></li>
+            </ul>
+            <ul class="logged-section topmenu pull-right" ng-show="vm.isLoggingIn">
+                <span>Xin chào : Thanh asdasdasdsa</span>
+                <li><a href="#" ng-click="vm.logOut">Thoát</a></li>
+            </ul>
           <!-- end col 9-->
         </div>
         <!-- end site header-->
