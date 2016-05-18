@@ -20,10 +20,11 @@
 }
 .jetmenu > li > a {
   border-top: 3px solid #FFFFFF;
-  color: #656565;
+  /*color: #656565;*/
+  color: #3C599B;
   display: inline-block;
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 600;
   line-height: 1.273em;
   padding: 18px 15px;
   text-decoration: none;

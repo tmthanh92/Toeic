@@ -32,11 +32,11 @@
         }
 
         function Create(user) {
-            return $http.post('http://localhost:2958/api/users/', user).then(handleSuccess, handleError('Error creating user'));
+            return $http.post('http://localhost/SeeEnglish/api/user/create/', user).then(handleSuccess, handleError('Error creating user'));
         }
 
         function Update(user) {
-            return $http.put('http://localhost:2958/api/users/' + user.id, user).then(handleSuccess, handleError('Error updating user'));
+            return $http.put('http://localhost/SeeEnglish/api/users/' + user.id, user).then(handleSuccess, handleError('Error updating user'));
         }
 
         function Delete(id) {

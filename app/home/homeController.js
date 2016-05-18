@@ -13,10 +13,16 @@
 
   function HomeController(UserService) {
     var vm = this;
+
+    vm.showCourseDetail = showCourseDetail;
     vm.sendContact = sendContact;
 
     function sendContact() {
       UserService.SendContactInfo(vm.contact);
+    }
+
+    function showCourseDetail() {
+        $('#myModal').modal('show');
     }
 
    /* app.directive('mySlider', function() {

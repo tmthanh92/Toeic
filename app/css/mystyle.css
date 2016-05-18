@@ -2,7 +2,7 @@
   visibility: hidden;
 }
 #title {
-  margin: -20px 0 10px 85px;
+  margin: -20px 0 10px -58px;
 }
 #title img {
   max-width: 185px;
@@ -317,4 +317,17 @@ body {
 
 .logged-section li{
   text-align: right;
+}
+
+#logo {
+  display: flex;
+  flex-direction: row;
+}
+
+#center-name {
+  font-size: 40px;
+  color: #3C599B;
+  margin-top: 10px;
+  font-weight: bold;
+  line-height: 40px;
 }

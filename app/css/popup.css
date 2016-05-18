@@ -1,0 +1,33 @@
+.course-wrapper {
+    width: 420px;
+    border: solid 1px #00a4d1;
+    font-family: Roboto, sans-serif;
+    font-weight: normal;
+}
+
+.course-name {
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: center;
+    background: #4F81BD;
+    color: white;
+    padding: 5px 10px;
+}
+
+.course-title   {
+    background: #215968;
+    padding: 5px 10px;
+    color: white;
+}
+
+ p {
+     margin:0;
+ }
+
+ul {
+    padding: 0 0 0 20px;
+}
+
+ul li {
+    list-style-type: none ;
+}
