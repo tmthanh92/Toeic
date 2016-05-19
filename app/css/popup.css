@@ -1,8 +1,11 @@
 .course-wrapper {
     width: 420px;
+    height: 580px;
+    overflow: hidden;
     border: solid 1px #00a4d1;
     font-family: Roboto, sans-serif;
     font-weight: normal;
+    background: #DCE6F2;
 }
 
 .course-name {
@@ -30,4 +33,10 @@ ul {
 
 ul li {
     list-style-type: none ;
+}
+
+.course-guild ul {
+    background: #A6A6A6;
+    color: black;
+    font-weight: 400;
 }
