@@ -7,7 +7,7 @@
 
         var vm = this;
 
-        vm.questionData = [];
+        vm.examinationData = [];
 
         function GetQuestionData() {
             var deferred = $q.defer();
@@ -22,7 +22,7 @@
         }
 
         GetQuestionData().then(function(data) {
-                vm.questionData = data;
+                vm.examinationData = data;
         },
         function() {
             alert('Error when loading data');

@@ -8,6 +8,7 @@
     var vm = this;
 
     vm.isLoggingIn = false;
+    vm.loggedUser = "";
     function login() {
       vm.dataLoading = true;
       AuthenticationService.Login(vm.username, vm.password, function(response) {
@@ -82,7 +83,13 @@
     }
 
     function fbLogin() {
-      FbLoginService.fbLogin();
+
+       FbLoginService.fbLogin().then(function(data) {
+        vm.isLoggingIn = true;
+        vm.loggedUser = data.name;
+         $('#loginmodal').modal('hide');
+       /*  $location.path('/home');*/
+       });
     }
 
     vm.login = login;

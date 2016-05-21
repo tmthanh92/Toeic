@@ -66,23 +66,25 @@
             <div class="col-lg-3 col-md-3 col-sm-12"></div>
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <form id="entry-test-frm" action="#" name="entrytestfrm" method="post">
-                    <div  ng-repeat="question in vm.questionData">
-                        <div id="q1" class="question-block">
-                            <div class="title">{{question.partTitle}}{{question.partContent}}</div>
-                            <div ng-repeat="qContent in question.questionContent">
-                                <div class="title">{{qContent.questionOrder}}. {{qContent.content}}</div>
-                                <img src="{{qContent.imageUrl}}" alt="">
-                                <div class="answer-block">
-                                    <div class="control-group" ng-repeat="aContent in qContent.answerContent">
-                                        <label class="control control--radio">
-                                            <input type="radio" name="q1" value="{{aContent.name}}">{{aContent.name}}. {{aContent.content}}
-                                            <div class="control__indicator"></div>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+              <div ng-repeat="data in vm.examinationData">
+                  <div ng-if = "data.MySelf == 'part'">{{data.partTbl.part_title}}{{data.partTbl.part_content}}</div>
+                  <div ng-if = "data.MySelf == 'question'">
+                      <div ng-if ="data.resource_link.length > 0">
+                         <div ng-repeat="resource in data.resource_link">
+                             <img src="{{resource.url}}">
+                         </div>
+                      </div>
+                      {{data.question.question_title}}{{data.question.question_content}}
+                  </div>
+                  <div ng-repeat="answer in data.answers">
+                      <label class="control control&#45;&#45;radio">
+                          <input type="radio" name="q2" value="d"> {{answer.answer.answer_title}}. {{answer.answer.answer_content}}
+                          <div class="control__indicator"></div>
+                      </label>
+                      <div></div>
+                  </div>
+
+              </div>
                     <!--<div id="q1" class="question-block">
                         <div class="title">{{vm.questionData[1].partTitle}}</div>
                         <div class="title">Câu 1</div><img src="http://toeic365.com/courses/wp-content/uploads/2014/09/example.png" alt="">
