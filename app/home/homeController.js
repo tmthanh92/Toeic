@@ -13,7 +13,7 @@
 
   function HomeController(UserService) {
     var vm = this;
-
+    vm.isContactSubmit = false;
     vm.showCourseDetail = showCourseDetail;
     vm.sendContact = sendContact;
 

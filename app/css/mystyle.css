@@ -331,3 +331,7 @@ body {
   font-weight: bold;
   line-height: 40px;
 }
+
+.error-message-label{
+  color: red;
+}
