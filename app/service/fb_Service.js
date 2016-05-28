@@ -3,7 +3,7 @@
  */
 /** Facebook Login JavaScript SDK*/
 (function() {
-    function FbLoginService($location) {
+    function FbLoginService($location, $q) {
         var service = {};
         function FacebookInit() {
             window.fbAsyncInit = function() {
@@ -45,6 +45,7 @@
 
 
         function FacebookLogin() {
+            var deferred = $q.defer();
             FB.getLoginStatus(function(response) {
                 if (response.status === 'connected') {
                     // the user is logged in and has authenticated your
@@ -58,9 +59,11 @@
                     FB.api('/me', function(response) {
                         console.log('Successful login for: ' + response.name);
                         console.log( 'Thanks for logging in, ' + response.name + '!');
+                        deferred.resolve(response);
                     });
-                    $('#loginmodal').modal('hide');
-                    $location.path('/home');
+
+                  /*  $('#loginmodal').modal('hide');
+                    $location.path('/home');*/
                 } else if (response.status === 'not_authorized') {
                     // the user is logged in to Facebook,
                     // but has not authenticated your app
@@ -71,6 +74,7 @@
                             console.log('Welcome!  Fetching your information.... ');
                             FB.api('/me', function(response) {
                                 console.log('Good to see you, ' + response.name + '.');
+                                deferred.resolve(response);
                             });
                             $('#loginmodal').modal('hide');
                             $location.path('/home');
@@ -83,10 +87,11 @@
                     });
                 }
             });
+            return deferred.promise;
         }
 
     }
-    FbLoginService.inject = ['$location'];
+    FbLoginService.inject = ['$location', '$q'];
     angular
         .module('app')
         .factory('FbLoginService', FbLoginService)

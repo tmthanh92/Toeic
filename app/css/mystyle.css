@@ -331,3 +331,9 @@ body {
   font-weight: bold;
   line-height: 40px;
 }
+
+.modal-window .modal-content{
+  width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}

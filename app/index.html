@@ -28,7 +28,7 @@
       <div class="container">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div class="callus">
-            <p><span><i class="fa fa-envelope-o"></i> support@toeiccenter.com</span><span><i class="fa fa-phone"></i> 09 777 839 20</span></p>
+            <p><span><i class="fa fa-envelope-o"></i> seeenglish@gmail.com</span><span><i class="fa fa-phone"></i> 09 777 839 20</span></p>
           </div>
           <!-- end callus-->
         </div>
@@ -44,14 +44,14 @@
               </li>
             </ul>-->
             <!-- topmenu-->
-           <!-- <div id="dmsearch" class="dmsearch">
+            <div id="dmsearch" class="dmsearch">
               <form id="searchform" action="#" method="get">
                 <div class="dm-search-container">
                   <input id="s" type="text" name="s" value="" placeholder="Tìm kiếm" class="dmsearch-input">
                 </div>
                 <input id="go" type="submit" value="" class="dmsearch-submit"><span class="searchicon"></span>
               </form>
-            </div>-->
+            </div>
           </div>
         </div>
         <div ng-include src="'login/login.html'"></div>
@@ -59,7 +59,7 @@
     </div>
     <header class="header-wrapper">
       <div class="container">
-        <div class="site-header clearfix" ng-controller="LoginController as vm">
+        <div class="site-header clearfix" ng-controller="LoginController as loginCtr">
           <div class="col-lg-5 col-md-3 col-sm-12 title-area pull-left" id="logo">
             <div id="title" class="site-title">
               <a href="#" title=""><img src="images/logosee2.png" alt=""></a>
@@ -82,7 +82,6 @@
                   </li>
 
                   <li><a href="#">Thư viện</a></li>-->
-                <li><a href="#/test">Thi thử</a></li>
                 <li class="right"><a href="contact.html"><i class="fa fa-envelope-o"></i> Liên hệ</a></li>
                 <li><a href="#">Thông tin</a></li>
                 <li><a href="#">Giới thiệu</a></li>
@@ -92,11 +91,11 @@
             </div>
             <!-- nav-->
           </div>
-            <ul class="login-section topmenu pull-right" ng-hide="vm.isLoggingIn">
+            <ul class="login-section topmenu pull-right" ng-hide="loginCtr.isLoggingIn">
                 <li><a href="#" onclick="event.preventDefault();" data-toggle="modal" data-target="#loginmodal"> Đăng nhập / Đăng ký</a></li>
             </ul>
-            <ul class="logged-section topmenu pull-right" ng-show="vm.isLoggingIn">
-                <span>Xin chào : Thanh asdasdasdsa</span>
+            <ul class="logged-section topmenu pull-right" ng-show="loginCtr.isLoggingIn" ng-cloak>
+                <span>Xin chào : {{loginCtr.loggedUser}}</span>
                 <li><a href="#" ng-click="vm.logOut">Thoát</a></li>
             </ul>
           <!-- end col 9-->
@@ -191,8 +190,10 @@
   <script src="js/formValidation.js"></script>
   <script src="js/formValidation.Framework.Bootstrap.js"></script>
   <script src="libs_components/angular/angular.min.js"></script>
+  <script src="js/ui-bootstrap-tpls-1.3.2.min.js"></script>
   <script src="libs_components/angular-cookies/angular-cookies.min.js"></script>
   <script src="libs_components/angular-route/angular-route.min.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="app.js"></script>
   <script src="service/authentication.service.js"></script>
   <script src="service/flash.service.js"></script>
