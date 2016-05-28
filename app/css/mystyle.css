@@ -332,6 +332,10 @@ body {
   line-height: 40px;
 }
 
+.error-message-label{
+  color: red;
+}
+
 .modal-window .modal-content{
   width: 420px;
   margin-left: auto;

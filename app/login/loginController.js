@@ -9,6 +9,8 @@
 
     vm.isLoggingIn = false;
     vm.loggedUser = "";
+    vm.isLogginSubmit = false;
+    vm.isRegSubmit = false;
     function login() {
       vm.dataLoading = true;
       AuthenticationService.Login(vm.username, vm.password, function(response) {
