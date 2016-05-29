@@ -33,7 +33,7 @@
 
         $('.timer').startTimer();
 
-        $('.index-question-block').find('li').on('click', function () {
+        $('.index-question-block').on('click', 'li', function () {
             var number = $(this).text();
             var questionElm = $("#q" + number);
             if (questionElm.length) {
