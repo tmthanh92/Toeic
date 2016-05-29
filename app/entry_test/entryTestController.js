@@ -3,18 +3,13 @@
  */
 (function () {
 
-    function TestController($scope, $location, AuthenticationService, FlashService, UserService, FbLoginService, $q, $http, $uibModal) {
+    function TestController($location, AuthenticationService, FlashService, UserService, FbLoginService, $q, $http, $uibModal) {
 
         var vm = this;
-        vm.countquestion = 0;
         vm.sendTest = sendTest;
 
         vm.examinationData = [];
-        
-        $scope.increaseIndexQuestion = function(){
-            vm.countquestion = vm.countquestion + 1;
-        }
-        
+
         function GetQuestionData() {
             var deferred = $q.defer();
             $http.get('http://localhost:3521/Api/Examination').
@@ -37,7 +32,7 @@
 
     
         function sendTest() {
-            //console.log(vm.test.answerValue);
+            console.log(vm.test.answerValue);
         }
         
         $('.timer').startTimer();
@@ -69,7 +64,7 @@
         });
     }
 
-    TestController.inject = ['$scope','$location', 'AuthenticationService', 'FlashService', 'UserService', 'FbLoginService', '$q', '$http', '$uibModal'];
+    TestController.inject = ['$location', 'AuthenticationService', 'FlashService', 'UserService', 'FbLoginService', '$q', '$http', '$uibModal'];
 
     var app = angular.module('app');
     app.controller('TestController', TestController);
