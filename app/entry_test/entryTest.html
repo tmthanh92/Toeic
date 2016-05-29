@@ -2,61 +2,10 @@
     <div class="wrapper-test-content">
         <div class="index-question-block">
             <div class="timer-block">
-                <div data-minutes-left="90" class="timer"></div>
+                <div data-minutes-left="30" class="timer"></div>
             </div>
             <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>1</li>
-                <li>1</li>
-                <li>10</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>100</li>
-                <li>112</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>10</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>100</li>
-                <li>112</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>10</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>100</li>
-                <li>112</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>10</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
+                <li ng-repeat="data in vm.examinationData">{{$index}}</li>
             </ul>
         </div>
         <div class="audio-block">
@@ -67,8 +16,12 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <form id="entry-test-frm" action="#" name="entrytestfrm" method="post">
               <div ng-repeat="data in vm.examinationData">
-                  <div ng-if = "data.MySelf == 'part'">{{data.partTbl.part_title}}{{data.partTbl.part_content}}</div>
-                  <div ng-if = "data.MySelf == 'question'">
+                  <div ng-if = "data.MySelf == 'part'" class="question-block">{{data.partTbl.part_title}}{{data.partTbl.part_content}}</div>
+                  <div ng-if = "data.MySelf == 'topic'" class="question-block">
+                     <p><b>{{data.TopicTbl.topic_title}}</b></p>
+                     <p>{{data.TopicTbl.topic_content}}</p>
+                  </div>
+                  <div id="q{{$index}}" ng-if = "data.MySelf == 'question'">
                       <div ng-if ="data.resource_link.length > 0">
                          <div ng-repeat="resource in data.resource_link">
                              <img src="{{resource.url}}">
@@ -78,7 +31,7 @@
                   </div>
                   <div ng-repeat="answer in data.answers">
                       <label class="control control&#45;&#45;radio">
-                          <input type="radio" name="q2" value="d"> {{answer.answer.answer_title}}. {{answer.answer.answer_content}}
+                          <input type="radio" name="q2" value="{{answer.answer.answer_title}}" ng-model="vm.test.answerValue"> {{answer.answer.answer_title}}. {{answer.answer.answer_content}}
                           <div class="control__indicator"></div>
                       </label>
                       <div></div>
@@ -184,7 +137,7 @@
                     </div>-->
                     <hr>
                     <div class="pull-right">
-                        <input type="submit" value="Nộp bài" class="btn btn-primary large">
+                        <input type="button" value="Nộp bài" class="btn btn-primary large" ng-click="vm.sendTest();">
                     </div>
                 </form>
             </div>

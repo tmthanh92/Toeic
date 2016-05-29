@@ -3,9 +3,10 @@
  */
 (function () {
 
-    function TestController($location, AuthenticationService, FlashService, UserService, FbLoginService, $q, $http) {
+    function TestController($location, AuthenticationService, FlashService, UserService, FbLoginService, $q, $http, $uibModal) {
 
         var vm = this;
+        vm.sendTest = sendTest;
 
         vm.examinationData = [];
 
@@ -23,17 +24,20 @@
 
         GetQuestionData().then(function(data) {
                 vm.examinationData = data;
+
         },
         function() {
             alert('Error when loading data');
         })
 
-
-
-
+    
+        function sendTest() {
+            console.log(vm.test.answerValue);
+        }
+        
         $('.timer').startTimer();
 
-        $('.index-question-block').on('click', 'li', function () {
+       /* $('.index-question-block').find('li').on('click', function () {
             var number = $(this).text();
             var questionElm = $("#q" + number);
             if (questionElm.length) {
@@ -57,11 +61,20 @@
                     });
                 }
             }
+        });*/
+        $('.index-question-block').on('click', 'li', function () {
+            var number = $(this).text();
+            var questionElm = $("#q" + number);
+            if (questionElm.length) {
+                $('html, body').animate({
+                    scrollTop: questionElm.offset().top - 55
+                }, 500);
+            }
         });
     }
 
-    TestController.inject = ['$location', 'AuthenticationService', 'FlashService', 'UserService', 'FbLoginService', '$q', '$http'];
-    angular
-        .module('app')
-        .controller('TestController', TestController);
+    TestController.inject = ['$location', 'AuthenticationService', 'FlashService', 'UserService', 'FbLoginService', '$q', '$http', '$uibModal'];
+
+    var app = angular.module('app');
+    app.controller('TestController', TestController);
 } ());

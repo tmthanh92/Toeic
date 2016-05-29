@@ -8,10 +8,11 @@
   var app = angular.module('app');
 
   app.controller('HomeController', HomeController);
+  app.controller('PopupController', PopupController);
 
-  HomeController.inject = ['UserService'];
+  HomeController.inject = ['UserService', '$uibModal'];
 
-  function HomeController(UserService) {
+  function HomeController(UserService, $uibModal) {
     var vm = this;
     vm.isContactSubmit = false;
     vm.showCourseDetail = showCourseDetail;
@@ -21,10 +22,24 @@
       UserService.SendContactInfo(vm.contact);
     }
 
-    function showCourseDetail() {
-        $('#myModal').modal('show');
-    }
+    function showCourseDetail(templateName, controllerName) {
+        /*$('#myModal').modal('show');*/
+      var modalInstance = $uibModal.open({
+        animation: true,
+        templateUrl: templateName,
+        controller: controllerName,
+        windowClass: 'modal-window',
+        resolve: {
+          items: function () {
+            return vm.person;
+          }
+        }
+      });
 
+      modalInstance.result.then(function (selectedItem) {
+        vm.selected = selectedItem;
+      })
+    }
    /* app.directive('mySlider', function() {
         return {
           restrict: 'EA',
@@ -38,13 +53,33 @@
         }
     })*/
 
-    $('.flexslider').flexslider({
+    /*$('.flexslider').flexslider({
       animation: "slide",
       controlNav: false,
+      itemWidth: 1100,
       start: function (slider) {
         $('body').removeClass('loading');
       }
-    });
+    });*/
     
   }
+
+  function PopupController($scope, $uibModalInstance, items) {
+    $scope.modalCancel = function () {
+      $uibModalInstance.dismiss('cancel');
+    };
+  }
+
+  // app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
+  //
+  //
+  //
+  //   $scope.ok = function () {
+  //     $uibModalInstance.close();
+  //   };
+  //
+  //   $scope.modalCancel = function () {
+  //     $uibModalInstance.dismiss('cancel');
+  //   };
+  // });
 })();
