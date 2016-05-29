@@ -32,7 +32,7 @@
 
     
         function sendTest() {
-            console.log(vm.test.answerValue);
+            console.log(vm.examinationData);
         }
         
         $('.timer').startTimer();

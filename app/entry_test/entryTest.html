@@ -14,7 +14,7 @@
         <div class="container">
             <div class="col-lg-3 col-md-3 col-sm-12"></div>
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <form id="entry-test-frm" action="#" name="entrytestfrm" method="post">
+                <form id="entry-test-frm"  ng-submit="entrytestfrm.$valid && vm.sendTest()" name="entrytestfrm" method="post" novalidate>
               <div ng-repeat="data in vm.examinationData">
                   <div ng-if = "data.MySelf == 'part'" class="part-block">{{data.partTbl.part_title}}{{data.partTbl.part_content}}</div>
                   <div ng-if = "data.MySelf == 'topic'" class="topic-block">
@@ -28,7 +28,7 @@
                       <div class="answer-block">
                           <div class="control-group">
                                 <label ng-repeat="answer in data.answers" class="control control&#45;&#45;radio">
-                                    <input type="radio" name="a{{answer.answer.question_id}}" value="{{answer.answer.answer_title}}"> {{answer.answer.answer_title}}. {{answer.answer.answer_content}}
+                                    <input type="radio" ng-model="data.answervalue" name="a{{answer.answer.question_id}}" value="{{answer.answer.answer_title}}" required> {{answer.answer.answer_title}}. {{answer.answer.answer_content}}
                                     <div class="control__indicator"></div>
                                 </label>
                           </div>
@@ -51,7 +51,6 @@
     $('#entry-test-frm').on('submit', function() {
         var emptyCount = 0;
         var indexQuestions = $('.index-question-block').find('li');
-        debugger;
         $('.question-block').each(function() {
             var found = false;
             var idAttr = $(this).attr('id');
