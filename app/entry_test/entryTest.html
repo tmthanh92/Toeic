@@ -5,7 +5,7 @@
                 <div data-minutes-left="30" class="timer"></div>
             </div>
             <ul>
-                <li ng-repeat="data in vm.examinationData">{{$index}}</li>
+                <li ng-repeat="data in vm.examinationData" ng-if="data.MySelf == 'question'" data-question-target="{{$index}}">{{data.question.question_title}}</li>
             </ul>
         </div>
         <div class="audio-block">
@@ -16,128 +16,29 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <form id="entry-test-frm" action="#" name="entrytestfrm" method="post">
               <div ng-repeat="data in vm.examinationData">
-                  <div ng-if = "data.MySelf == 'part'" class="question-block">{{data.partTbl.part_title}}{{data.partTbl.part_content}}</div>
-                  <div ng-if = "data.MySelf == 'topic'" class="question-block">
-                     <p><b>{{data.TopicTbl.topic_title}}</b></p>
+                  <div ng-if = "data.MySelf == 'part'" class="part-block">{{data.partTbl.part_title}}{{data.partTbl.part_content}}</div>
+                  <div ng-if = "data.MySelf == 'topic'" class="topic-block">
+                     <p>{{data.TopicTbl.topic_title}}</p>
                      <p>{{data.TopicTbl.topic_content}}</p>
                   </div>
-                  <div id="q{{$index}}" ng-if = "data.MySelf == 'question'">
-                      <div ng-if ="data.resource_link.length > 0">
-                         <div ng-repeat="resource in data.resource_link">
-                             <img src="{{resource.url}}">
-                         </div>
+                  <div id="q{{$index}}" class="question-block" ng-if = "data.MySelf == 'question'">
+                      <div class="title">Câu {{data.question.question_title}}</div>
+                      <img ng-if ="data.resource_link.length > 0" ng-src="{{data.resource_link[0].url}}">
+                      <div class="question-content-block">{{data.question.question_content}}</div>
+                      <div class="answer-block">
+                          <div class="control-group">
+                                <label ng-repeat="answer in data.answers" class="control control&#45;&#45;radio">
+                                    <input type="radio" name="a{{answer.answer.question_id}}" value="{{answer.answer.answer_title}}"> {{answer.answer.answer_title}}. {{answer.answer.answer_content}}
+                                    <div class="control__indicator"></div>
+                                </label>
+                          </div>
                       </div>
-                      {{data.question.question_title}}{{data.question.question_content}}
                   </div>
-                  <div ng-repeat="answer in data.answers">
-                      <label class="control control&#45;&#45;radio">
-                          <input type="radio" name="q2" value="{{answer.answer.answer_title}}" ng-model="vm.test.answerValue"> {{answer.answer.answer_title}}. {{answer.answer.answer_content}}
-                          <div class="control__indicator"></div>
-                      </label>
-                      <div></div>
-                  </div>
-
               </div>
-                    <!--<div id="q1" class="question-block">
-                        <div class="title">{{vm.questionData[1].partTitle}}</div>
-                        <div class="title">Câu 1</div><img src="http://toeic365.com/courses/wp-content/uploads/2014/09/example.png" alt="">
-                        <div class="answer-block">
-                            <div class="control-group">
-                                <label class="control control&#45;&#45;radio">
-                          <input type="radio" name="q1" value="a">A
-                          <div class="control__indicator"></div>
-                        </label>
-                                <label class="control control&#45;&#45;radio">
-                          <input type="radio" name="q1" value="b">B
-                          <div class="control__indicator"></div>
-                        </label>
-                                <label class="control control&#45;&#45;radio">
-                          <input type="radio" name="q1" value="c">C
-                          <div class="control__indicator"></div>
-                        </label>
-                                <label class="control control&#45;&#45;radio">
-                          <input type="radio" name="q1" value="d">D
-                          <div class="control__indicator"></div>
-                        </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="q2" class="question-block">
-                        <div class="title">Câu 2</div><img src="http://toeic365.com/courses/wp-content/uploads/2014/09/example.png" alt="">
-                        <div class="answer-block">
-                            <div class="control-group">
-                                <label class="control control&#45;&#45;radio">
-                          <input type="radio" name="q2" value="a">A
-                          <div class="control__indicator"></div>
-                        </label>
-                                <label class="control control&#45;&#45;radio">
-                          <input type="radio" name="q2" value="b">B
-                          <div class="control__indicator"></div>
-                        </label>
-                                <label class="control control&#45;&#45;radio">
-                          <input type="radio" name="q2" value="c">C
-                          <div class="control__indicator"></div>
-                        </label>
-                                <label class="control control&#45;&#45;radio">
-                          <input type="radio" name="q2" value="d">D
-                          <div class="control__indicator"></div>
-                        </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="q3" class="question-block">
-                        <div class="title">Câu 3</div>
-                        <div class="answer-block">
-                            <div class="control-group">
-                                <label class="control control&#45;&#45;radio">
-                          <input type="radio" name="q3" value="a">A
-                          <div class="control__indicator"></div>
-                        </label>
-                                <label class="control control&#45;&#45;radio">
-                          <input type="radio" name="q3" value="b">B
-                          <div class="control__indicator"></div>
-                        </label>
-                                <label class="control control&#45;&#45;radio">
-                          <input type="radio" name="q3" value="c">C
-                          <div class="control__indicator"></div>
-                        </label>
-                                <label class="control control&#45;&#45;radio">
-                          <input type="radio" name="q3" value="d">D
-                          <div class="control__indicator"></div>
-                        </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="q4" class="question-block">
-                        <div class="title">Câu 4</div>
-                        <div class="question-content-block">It will soon be time to file your tax returns. We will not be issuing financial statements automatically
-                            to…(1)…….employees as we have done in the past. If you need a statement of your income for the
-                            past year, please apply…(2)…….writing to the Accounting office as soon as possible. Please give
-                            the accounting office the following information: </div>
-                        <div class="answer-block">
-                            <div class="control-group">
-                                <label class="control control&#45;&#45;radio">
-                          <input type="radio" name="q4" value="a">A
-                          <div class="control__indicator"></div>
-                        </label>
-                                <label class="control control&#45;&#45;radio">
-                          <input type="radio" name="q4" value="b">B
-                          <div class="control__indicator"></div>
-                        </label>
-                                <label class="control control&#45;&#45;radio">
-                          <input type="radio" name="q4" value="c">C
-                          <div class="control__indicator"></div>
-                        </label>
-                                <label class="control control&#45;&#45;radio">
-                          <input type="radio" name="q4" value="d">D
-                          <div class="control__indicator">   </div>
-                        </label>
-                            </div>
-                        </div>
-                    </div>-->
+                
                     <hr>
                     <div class="pull-right">
-                        <input type="button" value="Nộp bài" class="btn btn-primary large" ng-click="vm.sendTest();">
+                        <input type="submit" value="Nộp bài" class="btn btn-primary large">
                     </div>
                 </form>
             </div>
@@ -147,29 +48,10 @@
 </div>
 
 <script>
-    // function getRadioOptions(){
-    //     var questions = $('.question-block').find('input[type="radio"]:first')
-    //     var options  = {};
-    //     var rules = {
-    //       validators: {
-    //         notEmpty: {
-    //           message: 'The name is required'
-    //         }
-    //       }
-    //     };
-    //     questions.each(function (){
-    //        var questionname = $(this).attr('name');
-    //        options[questionname] = rules;
-    //     });
-    //     return options;
-    // }
-    // $('#entry-test-frm').formValidation({
-    //   framework: 'bootstrap',
-    //   fields: getRadioOptions()
-    // });
-    var indexQuestions = $('.index-question-block').find('li');
     $('#entry-test-frm').on('submit', function() {
         var emptyCount = 0;
+        var indexQuestions = $('.index-question-block').find('li');
+        debugger;
         $('.question-block').each(function() {
             var found = false;
             var idAttr = $(this).attr('id');
@@ -184,7 +66,7 @@
                 emptyCount++;
                 if (!isNaN(parseInt(id))) {
                     indexQuestions.filter(function () {
-                        if ($(this).text() === id) {
+                        if ($(this).data('question-target') == id) {
                             $(this).css({ 'background': '#FDB53F' });
                         }
                     });

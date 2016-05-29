@@ -123,36 +123,35 @@ span.socialText {
   margin: auto;
 }
 .wrapper-test-content .question-block {
-  margin-top: 30px;
-  border-top: 1px solid gray;
+  margin-top: 10px; 
 }
 .wrapper-test-content .question-block .title {
-  font-size: 18px;
-  border: 1px solid #43609C;
-  color: #43609C;
-  padding: 5px;
-  margin: 15px 0;
+  font-size: 14px;
+  color: #3C599B;
+  border: 1px solid #3C599B;
+  padding: 3px;
+  margin: 5px 0;
   display: inline-block;
+}
+.wrapper-test-content .part-block{
+  font-size: 14px;
+  border-top: 1px solid gray;
+  font-weight: bold;
+  padding-top: 10px;
+}
+.wrapper-test-content .topic-block{
+  font-size: 14px;
+  border: 1px solid #C1C1C1;
+  padding: 0 10px;
 }
 .wrapper-test-content .question-block img {
   width: 100%;
 }
 .wrapper-test-content .question-block .question-content-block {
   font-size: 14px;
-  font-weight: bold;
 }
 .wrapper-test-content .question-block .answer-block {
   margin-top: 20px;
-  /* Hover and focus states */
-  /* Checked state */
-  /* Hover state whilst checked */
-  /* Disabled state */
-  /* Check mark */
-  /* Show check mark */
-  /* Checkbox tick */
-  /* Disabled tick colour */
-  /* Radio button inner circle */
-  /* Disabled circle colour */
 }
 .wrapper-test-content .question-block .answer-block .control {
   font-size: 14px;
@@ -161,6 +160,7 @@ span.socialText {
   margin-bottom: 15px;
   padding-left: 30px;
   cursor: pointer;
+  font-weight: normal;
 }
 .wrapper-test-content .question-block .answer-block .control input {
   position: absolute;
