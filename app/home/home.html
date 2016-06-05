@@ -7,80 +7,77 @@
     </ul>
   </div>
 </section>-->
-<div class="course_list_wrapper col-lg-3 col-md-3 col-sm-12" >
+<div class="container wrapper-test-content">
+<div class="col-lg-7 col-md-7 col-sm-12" >
   <div class="parent" >
-    <div class="wide" id="free_test">
-      <a href="#/test"><p>FREE TEST</p></a>
-    </div>
+    <a class="wide" href="#/test" id="free_test">
+      <p>FREE TEST</p>
+    </a>
     <div class="narrow">
       <p>Sau khi hoàn thành bài kiểm tra đánh giá khả năng hiện tại của bạn.
         SEE ENGLISH sẽ trực tiếp hỗ trợ bạn phân tích và đánh giá miễn phí để cải thiện nó. <a href="#" onclick="event.preventDefault();" ng-click="vm.showCourseDetail('popup/popup_free_test.html', 'PopupController');"><span>XEM CHI TIẾT→</span></a></p>
     </div>
   </div>
   <div class="parent">
-    <div class="wide">
+    <a class="wide" href="#">
       <p>TOEIC</p>
       <p>0 → 450+</p>
-    </div>
+    </a>
     <div class="narrow">
       <p>Dành cho học viên mất căn bản hoàn toàn về ngữ pháp và từ vựng. <a href="#" onclick="event.preventDefault();" ng-click="vm.showCourseDetail('popup/popup_450.html', 'PopupController');"><span>XEM CHI TIẾT→</span></a></p>
     </div>
   </div>
   <div class="parent">
-    <div class="wide">
+    <a class="wide" href="#">
       <p>TOEIC</p>
       <p>400 → 700+</p>
-    </div>
+    </a>
     <div class="narrow">
       <p>Dành cho học viên có điểm Toeic 250+, đã từng học anh văn và có kiến thức cơ bản nhưng không sử dụng tiếng Anh trong một thời gian dài. <a href="#" onclick="event.preventDefault();" ng-click="vm.showCourseDetail('popup/popup_700.html', 'PopupController');"><span>XEM CHI TIẾT→</span></a></p>
     </div>
   </div>
   <div class="parent">
-    <div class="wide">
+    <a class="wide" href="#">
       <p>TOEIC</p>
       <p>800+</p>
-    </div>
+    </a>
     <div class="narrow">
       <p>Dành cho học viên có điểm Toeic cao. Mục tiêu tiếp theo là đạt điểm tuyệt đối Toeic. <a href="#" onclick="event.preventDefault();" ng-click="vm.showCourseDetail('popup/popup_800.html', 'PopupController');"><span>XEM CHI TIẾT→</span></a></p>
     </div>
   </div>
   <div class="parent">
-    <div class="wide">
+    <a class="wide" href="#">
       <p>TOEIC</p>
       <p>S & W</p>
-    </div>
+    </a>
     <div class="narrow">
       <p>TOEIC SPEAKING & WRITING <br>
         Dành cho học viên đã có kiến thức cơ bản và muốn chinh phục 4 kĩ năng “nghe, nói, đọc, viết” và giao tiếp lưu loát trong môi trường công sở. <a href="#" onclick="event.preventDefault();" ng-click="vm.showCourseDetail('popup/popup.html', 'PopupController');"><span>XEM CHI TIẾT→</span></a></p>
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="general_wrapper clearfix">
-    <div class="col-lg-3 col-md-3 col-sm-12"> </div>
-    <div class="col-lg-4 col-md-9 col-sm-12" style="float: right">
+
+    <div class="col-lg-5 col-md-5 col-sm-12">
       <form id="form-send-info" name="contactform" ng-submit="contactform.$valid && vm.sendContact()" novalidate>
-        <div class="col-lg-12 col-md-9 col-sm-12 col-xs-12">
-          <label id="contact-font"><b>Gửi thông tin để nhận các tài liệu tiếng Anh và được SEE ENGLISH tư vấn miễn phí</b></label>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <label id="contact-form-title">Gửi thông tin để nhận các tài liệu tiếng anh và được <span class="title"> SEE ENGLISH </span> tư vấn miễn phí</label>
           <div class="form-group">
-            <input autocomplete="off" id="name" type="text" name="name" placeholder="Tên" class="form-control" ng-model="vm.contact.fullname" ng-minlength="4" required/>
+            <input autocomplete="off" id="name" type="text" name="name" placeholder="Họ và tên*" class="form-control" ng-model="vm.contact.fullname" required/>
             <div ng-if="vm.isContactSubmit" class="error-message-label">
-              <div ng-show="contactform.name.$error.required">This field is required</div>
-              <div ng-show="contactform.name.$error.minlength">The name must be more than 3 characters long</div>
+              <div ng-show="contactform.name.$error.required">Vui lòng nhập họ và tên!</div>
             </div>
           </div>
           <div class="form-group">
-            <input autocomplete="off" id="phone" type="number" name="phone" placeholder="Số điện thoại" class="form-control" ng-model="vm.contact.phoneNumber" ng-minlength="4" required/>
+            <input autocomplete="off" id="phone" type="number" name="phone" placeholder="Số điện thoại*" class="form-control" ng-model="vm.contact.phoneNumber" required/>
             <div ng-if="vm.isContactSubmit" class="error-message-label">
-              <div ng-show="contactform.phone.$error.required">This field is required</div>
-              <div ng-show="contactform.phone.$error.minlength">The phone number must be more than 3 characters long</div>
+              <div ng-show="contactform.phone.$error.required">Vui lòng nhập số điện thoại!</div>
             </div>
           </div>
           <div class="form-group">
-            <input autocomplete="off" id="email" type="email" name="email" placeholder="Email" class="form-control" ng-model="vm.contact.email" required/>
+            <input autocomplete="off" id="email" type="email" name="email" placeholder="Email*" class="form-control" ng-model="vm.contact.email" required/>
             <div ng-if="vm.isContactSubmit" class="error-message-label">
-              <div ng-show="contactform.email.$error.required">This field is required</div>
-              <div ng-show="contactform.email.$error.email">Email is invalid</div>
+              <div ng-show="contactform.email.$error.required">Vui lòng nhập địa chỉ Email!</div>
+              <div ng-show="contactform.email.$error.email">Địa chỉ Email không hợp lệ</div>
             </div>
           </div>
           <div class="form-group" ng-init="vm.contact.notes='Học sinh'">
@@ -89,29 +86,16 @@
             <label class="radio-inline"><input type="radio" name="career" ng-model="vm.contact.notes" ng-value="'Đi làm'">Đi làm</label>
           </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <!--<div class="form-group">
-            <input id="phone" type="text" name="phone" placeholder="Số điện thoại" class="form-control" ng-model="vm.contact.phoneNumber">
-          </div>
-          <div class="form-group">
-            <input id="email" type="email" name="email" placeholder="Email" class="form-control" ng-model="vm.contact.email">
-          </div>-->
-        </div>
+        
         <div class="clearfix"></div>
-        <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div class="form-group">
-            <textarea id="comments" name="comments" rows="6" placeholder="Lời nhắn ..." class="form-control" ng-model="vm.contact.message"></textarea>
-          </div>
-        </div>-->
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div class="pull-right">
             <div class="form-group">
-              <input id="submit" type="submit" ng-click="vm.isContactSubmit=true" value="GỬI" class="btn btn-primary small">
+              <input id="submit" type="submit" ng-click="vm.isContactSubmit=true" value="GỬI" class="btn btn-primary btn-submit-guest">
             </div>
           </div>
         </div>
       </form>
     </div>
-  </div>
 </div>
 <div ng-include ng-hide="true" src="'popup/popup.html'"></div>

@@ -13,31 +13,50 @@
         function GetQuestionData() {
             var deferred = $q.defer();
             $http.get('http://localhost:3521/Api/Examination').
-            success(function(data, status, headers, config) {
-                deferred.resolve(data);
-            }).
-            error(function(data, status, headers, config) {
-                deferred.reject(status);
-            });
+                success(function (data, status, headers, config) {
+                    deferred.resolve(data);
+                }).
+                error(function (data, status, headers, config) {
+                    deferred.reject(status);
+                });
             return deferred.promise;
         }
 
-        GetQuestionData().then(function(data) {
-                vm.examinationData = data;
+        GetQuestionData().then(function (data) {
+            vm.examinationData = data;
 
         },
-        function() {
-            alert('Error when loading data');
-        })
+            function () {
+                alert('Error when loading data');
+            })
 
-    
+
         function sendTest() {
-            console.log(vm.examinationData);
+            var data = vm.examinationData,
+                correctedAnswer = 0,
+                totalAnswer = 0,
+                countAnswer = 0,
+                currentQuestion;
+            for (var countData = 0, length = data.length; countData < length; countData++) {
+                if (data[countData].MySelf === 'question') {
+                    totalAnswer++;
+                    currentQuestion = data[countData];
+                    for (countAnswer = 0; countAnswer < data[countData].answers.length; countAnswer++) {
+                        if (currentQuestion.answers[countAnswer].answer.answer_title === currentQuestion.answervalue
+                            && currentQuestion.answers[countAnswer].answer.is_correct) {
+                                correctedAnswer++;
+                                break;
+                        }
+                    }
+                }
+            }
+            alert(totalAnswer);
+            alert(correctedAnswer);
         }
-        
+
         $('.timer').startTimer();
 
-        
+
         $('.wrapper-test-content').on('click', 'input[type="radio"]', function () {
             var name = $(this).closest('.question-block').attr('id');
             var id = '';

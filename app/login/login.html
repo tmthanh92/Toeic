@@ -17,22 +17,21 @@
               <form id="loginform" name="loginform" ng-submit="loginform.$valid && vm.login()" novalidate>
                 <div class="form-group">
                   <div class="input-group"><span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                    <input type="email" name="email" placeholder="Email" class="form-control" ng-model="vm.username" required>
+                    <input type="email" name="email" placeholder="Email*" class="form-control" ng-model="vm.username" required>
 
                   </div>
                   <div ng-if="vm.isLogginSubmit" class="error-message-label">
-                    <div ng-show="loginform.email.$error.required">This field is required</div>
-                    <div ng-show="loginform.email.$error.email">Email is invalid</div>
+                    <div ng-show="loginform.email.$error.required">Vui lòng nhập địa chỉ Email!</div>
+                    <div ng-show="loginform.email.$error.email">Địa chỉ Email không hợp lệ</div>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="input-group"><span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                    <input type="password" name="password" placeholder="Mật khẩu" class="form-control" ng-model="vm.password" required minlength="4">
+                    <input type="password" name="password" placeholder="Mật khẩu*" class="form-control" ng-model="vm.password" required>
 
                   </div>
                   <div ng-if="vm.isLogginSubmit" class="error-message-label">
-                    <div ng-show="loginform.password.$error.required">This field is required</div>
-                    <div ng-show="loginform.password.$error.minlength">The password must be more than 3 characters long</div>
+                    <div ng-show="loginform.password.$error.required">Vui lòng nhập mật khẩu!</div>
                   </div>
                 </div>
                 <div class="form-group">
@@ -59,36 +58,35 @@
             <div id="registertab" class="tab-pane">
               <form id="registerform" name="registerform" ng-submit="registerform.$valid && vm.register()" novalidate>
                 <div class="form-group">
-                  <input type="text" placeholder="Tên" name="firstname" class="form-control" ng-model="vm.user.firstName" required>
+                  <input type="text" placeholder="Tên*" name="firstname" class="form-control" ng-model="vm.user.firstName" required>
                   <div ng-if="vm.isRegSubmit" class="error-message-label">
-                    <div ng-show="registerform.firstname.$error.required">This field is required</div>
+                    <div ng-show="registerform.firstname.$error.required">Vui lòng nhập Tên!</div>
                   </div>
                 </div>
                 <div class="form-group">
-                  <input type="text" placeholder="Họ" name="lastname" class="form-control" ng-model="vm.user.lastName" required>
+                  <input type="text" placeholder="Họ*" name="lastname" class="form-control" ng-model="vm.user.lastName" required>
                   <div ng-if="vm.isRegSubmit" class="error-message-label">
-                    <div ng-show="registerform.lastname.$error.required">This field is required</div>
+                    <div ng-show="registerform.lastname.$error.required">Vui lòng nhập Họ!</div>
                   </div>
                 </div>
                 <div class="form-group">
-                  <input type="email" placeholder="Email" name="email" class="form-control" ng-model="vm.user.email" required>
+                  <input type="email" placeholder="Email*" name="email" class="form-control" ng-model="vm.user.email" required>
                   <div ng-if="vm.isRegSubmit" class="error-message-label">
-                    <div ng-show="registerform.email.$error.required">This field is required</div>
-                    <div ng-show="registerform.email.$error.email">Email is invalid</div>
+                    <div ng-show="registerform.email.$error.required">Vui lòng nhập địa chỉ Email!</div>
+                    <div ng-show="registerform.email.$error.email">Địa chỉ Email không hợp lệ</div>
                   </div>
                 </div>
                 <div class="form-group">
-                  <input type="password" placeholder="Mật khẩu" name="password" class="form-control" ng-model="vm.user.password" required minlength="4" >
+                  <input type="password" placeholder="Mật khẩu*" name="password" class="form-control" ng-model="vm.user.password" required>
                   <div ng-if="vm.isRegSubmit" class="error-message-label">
-                    <div ng-show="registerform.password.$error.required">This field is required</div>
-                    <div ng-show="registerform.password.$error.minlength">The password must be more than 3 characters long</div>
+                    <div ng-show="registerform.password.$error.required">Vui lòng nhập mật khẩu!</div>
                   </div>
                 </div>
                 <div class="form-group">
-                  <input type="password" placeholder="Nhập lại mật khẩu" name="confirmpassword" class="form-control" ng-model="vm.user.repeatPassword" required data-password-verify="vm.user.password">
+                  <input type="password" placeholder="Nhập lại mật khẩu*" name="confirmpassword" class="form-control" ng-model="vm.user.repeatPassword" required data-password-verify="vm.user.password">
                   <div ng-if="vm.isRegSubmit" class="error-message-label">
-                    <div ng-show="registerform.confirmpassword.$error.required">This field is required</div>
-                    <div ng-show="registerform.confirmpassword.$error.passwordVerify">The password and its confirm are not the same</div>
+                    <div ng-show="registerform.confirmpassword.$error.required">Vui lòng xác nhận lại mật khẩu!</div>
+                    <div ng-show="registerform.confirmpassword.$error.passwordVerify">Xác nhận mật khẩu không đúng</div>
                   </div>
                 </div>
                 <div class="form-group">
