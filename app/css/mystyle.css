@@ -125,6 +125,8 @@ span.socialText {
 .wrapper-test-content .audio-block {
   display: table;
   margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 .wrapper-test-content .question-block {
   margin-top: 10px; 
