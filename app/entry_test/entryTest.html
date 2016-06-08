@@ -1,49 +1,86 @@
 <div class="container">
-    <div class="wrapper-test-content">
+    <div class="wrapper-intro-test" ng-show="vm.isShowIntro">
+        <div class="title-block">Full Test</div>
+        <div class="intro-content-block">
+            <p class="content">
+                Chào mừng các bạn đến với đề thi thử TOEIC trong chương trình Luyện thi TOEIC online của See English Đây là bài thi mô phỏng
+                dạng đề thi TOEIC thực tế do đội ngũ giáo viên của See English kì công biên soạn. Bài làm của các bạn sẽ
+                được chấm điểm và thông báo kết quả ngay sau khi các bạn nộp bài.
+            </p>
+            <p class="note">Bạn hãy click vào nút Start bên dưới để bắt đầu làm bài. Chúc các bạn đạt điểm số thật cao!</p>
+            <input type="button" value="Start" class="btn btn-primary" ng-disabled="vm.isDataError" ng-click="vm.startTest()" />
+        </div>
+    </div>
+    <div class="wrapper-test-content" ng-show="vm.isShowExam">
         <div class="index-question-block">
             <div class="timer-block">
-                <div data-minutes-left="30" class="timer"></div>
+                <div data-minutes-left="0.5" class="timer"></div>
             </div>
             <ul>
                 <li ng-repeat="data in vm.examinationData" ng-if="data.MySelf == 'question'" data-question-target="{{$index}}">{{data.question.question_title}}</li>
             </ul>
         </div>
         <div class="audio-block">
-            <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/267823491&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=true"></iframe>
+            <audio controls>
+                <source src="audio/01.test64.mp3" type="audio/mpeg">
+            </audio>
+            <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/YBQ-irnWrmY" frameborder="0" allowfullscreen=""></iframe>-->
         </div>
         <div class="container">
             <div class="col-lg-3 col-md-3 col-sm-12"></div>
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <form id="entry-test-frm"  ng-submit="entrytestfrm.$valid && vm.sendTest()" name="entrytestfrm" method="post" novalidate>
-              <div ng-repeat="data in vm.examinationData">
-                  <div ng-if = "data.MySelf == 'part'" class="part-block">{{data.partTbl.part_title}}{{data.partTbl.part_content}}</div>
-                  <div ng-if = "data.MySelf == 'topic'" class="topic-block">
-                     <p>{{data.TopicTbl.topic_title}}</p>
-                     <p>{{data.TopicTbl.topic_content}}</p>
-                  </div>
-                  <div id="q{{$index}}" class="question-block" ng-if = "data.MySelf == 'question'">
-                      <div class="title">Câu {{data.question.question_title}}</div>
-                      <img ng-if ="data.resource_link.length > 0" ng-src="{{data.resource_link[0].url}}">
-                      <div class="question-content-block">{{data.question.question_content}}</div>
-                      <div class="answer-block">
-                          <div class="control-group">
-                                <label ng-repeat="answer in data.answers" class="control control&#45;&#45;radio">
+                <form id="entry-test-frm" ng-submit="entrytestfrm.$valid && vm.sendTest()" name="entrytestfrm" method="post" novalidate>
+                    <div ng-repeat="data in vm.examinationData">
+                        <div ng-if="data.MySelf == 'part'" class="part-block">{{data.partTbl.part_title}}{{data.partTbl.part_content}}</div>
+                        <div ng-if="data.MySelf == 'topic'" class="topic-block">
+                            <p>{{data.TopicTbl.topic_title}}</p>
+                            <p>{{data.TopicTbl.topic_content}}</p>
+                        </div>
+                        <div id="q{{$index}}" class="question-block" ng-if="data.MySelf == 'question'">
+                            <div class="title">Câu {{data.question.question_title}}</div>
+                            <img ng-if="data.resource_link.length > 0" ng-src="{{data.resource_link[0].url}}">
+                            <div class="question-content-block">{{data.question.question_content}}</div>
+                            <div class="answer-block">
+                                <div class="control-group">
+                                    <label ng-repeat="answer in data.answers" class="control control&#45;&#45;radio">
                                     <input type="radio" ng-model="data.answervalue" name="a{{answer.answer.question_id}}" value="{{answer.answer.answer_title}}" required> {{answer.answer.answer_title}}. {{answer.answer.answer_content}}
                                     <div class="control__indicator"></div>
                                 </label>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <hr>
                     <div class="pull-right">
-                        <input type="submit" value="Nộp bài" class="btn btn-primary large">
+                        <input type="button" value="Làm lại" class="btn btn-primary large" ng-click="vm.resetTest()">
+                        <input type="submit" value="Nộp bài" class="btn btn-success large">
                     </div>
                 </form>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12"></div>
         </div>
+    </div>
+    <div class="wrapper-result-block">
+        <div id="result-modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Kết quả bài Test của bạn: <label>{{correctedAnswer}}/{{totalAnswer}} câu đúng</label></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="vm.resetTest()">Làm lại</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Đóng</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </div>
 
@@ -77,4 +114,5 @@
         }
         return true;
     });
+
 </script>

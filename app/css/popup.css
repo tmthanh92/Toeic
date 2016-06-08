@@ -51,11 +51,11 @@
     margin-bottom: 0;
 }
 
-.cancelButton {
-    margin: -30px 10px 0 0;
-    padding-right: 0;
-    border: none;
-}
+/*.cancelButton {*/
+    /*margin: -30px 10px 0 0;*/
+    /*padding-right: 0;*/
+    /*border: none;*/
+/*}*/
 
 .course-item:nth-child(1) {
     width: 19%;
@@ -111,4 +111,13 @@
 
 .course-block-1 span {
     color: #E49A12;
+}
+.accept-btn {
+    box-shadow: none;
+    background: #C0504D;
+}
+
+.cancel-btn {
+    box-shadow: none;
+    background-image: none;
 }
