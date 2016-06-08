@@ -381,10 +381,12 @@ body {
   font-weight: bold;
 }
 
-.fanpage {
-    text-align: right;
-    text-decoration: underline;
+.jetmenu ul.dropdown li > a:hover{
+    color: #FFC000;
 }
+
+.fanpage {
+    text-align: right;  }
 
 .fanpage a:hover {
     color: #FFC000;
