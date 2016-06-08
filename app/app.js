@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app', ['ngRoute', 'ngCookies', 'password-verify','ui.bootstrap', 'ngAnimate' ])
+    .module('app', ['ngRoute', 'ngCookies', 'password-verify', 'auto-active', 'ui.bootstrap', 'ngAnimate' ])
     .config(config);
   /*  .run(run);*/
     /*window.fbAsyncInit = function() {
@@ -40,7 +40,6 @@
   config.$inject = ['$routeProvider', '$locationProvider', '$httpProvider', '$httpProvider'];
 
   function config($routeProvider, $locationProvider) {
-
     $routeProvider
       .when('/home', {
         controller: 'HomeController',

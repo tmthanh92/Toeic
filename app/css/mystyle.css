@@ -371,3 +371,65 @@ body {
   color: #3C599B;
   font-size: 14px;
 }
+.wrapper-intro-test {
+  border: 1px solid #ededed;
+}
+@media (max-width: 768px) {
+  .wrapper-intro-test{
+    margin: 20px 0px;
+  } 
+}
+@media (min-width: 768px) {
+  .wrapper-intro-test{
+    margin: 20px 60px;
+  } 
+}
+@media (min-width: 1200px) {
+  .wrapper-intro-test{
+    margin: 20px 120px;
+  } 
+}
+.wrapper-intro-test .title-block{
+    background: #43609C;
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+.wrapper-intro-test .intro-content-block{
+  margin: 30px;
+}
+.wrapper-intro-test .intro-content-block p.content{
+  font-size: 15px;
+  text-align: justify;
+  line-height: 150%;
+}
+.wrapper-intro-test .intro-content-block p.note{
+   font-size: 15px;
+   text-align: center;
+    line-height: 150%;
+    color: #C42D00;
+}
+
+.wrapper-intro-test .intro-content-block input{
+    margin: auto;
+    width: 100px;
+    display: block;
+    font-size: 18px;
+}
+
+.wrapper-result-block #result-modal p{
+  font-size: 18px;
+}
+
+.wrapper-result-block #result-modal p label{
+    color: #fff;
+    background-color: #cc3300;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 7px;
+    margin-left: 5px;
+    font-size: 24px;
+}

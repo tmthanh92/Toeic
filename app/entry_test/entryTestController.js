@@ -3,13 +3,16 @@
  */
 (function () {
 
-    function TestController($location, AuthenticationService, FlashService, UserService, FbLoginService, $q, $http, $uibModal) {
+    function TestController($location, AuthenticationService, FlashService, UserService, FbLoginService, $q, $http, $uibModal, $scope) {
 
         var vm = this;
         vm.sendTest = sendTest;
-
+        vm.startTest = startTest;
+        vm.resetTest = resetTest;
+        vm.isDataError = true;
         vm.examinationData = [];
-
+        vm.isShowIntro = true;
+        vm.isShowExam = false;
         function GetQuestionData() {
             var deferred = $q.defer();
             $http.get('http://localhost:3521/Api/Examination').
@@ -24,12 +27,14 @@
 
         GetQuestionData().then(function (data) {
             vm.examinationData = data;
+            vm.isDataError = false;
+        });
 
-        },
-            function () {
-                alert('Error when loading data');
-            })
-
+        function startTest() {
+            $('.timer').startTimer();
+            vm.isShowIntro = false;
+            vm.isShowExam = true;
+        }
 
         function sendTest() {
             var data = vm.examinationData,
@@ -44,18 +49,32 @@
                     for (countAnswer = 0; countAnswer < data[countData].answers.length; countAnswer++) {
                         if (currentQuestion.answers[countAnswer].answer.answer_title === currentQuestion.answervalue
                             && currentQuestion.answers[countAnswer].answer.is_correct) {
-                                correctedAnswer++;
-                                break;
+                            correctedAnswer++;
+                            break;
                         }
                     }
                 }
             }
-            alert(totalAnswer);
-            alert(correctedAnswer);
+            $scope.totalAnswer = totalAnswer;
+            $scope.correctedAnswer = correctedAnswer;
+            $('#result-modal').modal({
+                show: 'false'
+            });
         }
 
-        $('.timer').startTimer();
-
+        function resetTest(){
+             for (var countData = 0, length = vm.examinationData.length; countData < length; countData++) {
+                if (vm.examinationData[countData].MySelf === 'question') {
+                    if(vm.examinationData[countData].answervalue){
+                        vm.examinationData[countData].answervalue = null;
+                    }
+                }
+            }
+            $('.index-question-block').find('li').each(function(){
+                $(this).css({ 'background': 'white' });
+            })
+            $('.timer').startTimer();
+        }
 
         $('.wrapper-test-content').on('click', 'input[type="radio"]', function () {
             var name = $(this).closest('.question-block').attr('id');
@@ -83,7 +102,7 @@
         });
     }
 
-    TestController.inject = ['$location', 'AuthenticationService', 'FlashService', 'UserService', 'FbLoginService', '$q', '$http', '$uibModal'];
+    TestController.inject = ['$location', 'AuthenticationService', 'FlashService', 'UserService', 'FbLoginService', '$q', '$http', '$uibModal', '$scope'];
 
     var app = angular.module('app');
     app.controller('TestController', TestController);
