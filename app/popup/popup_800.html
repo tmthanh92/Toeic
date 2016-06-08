@@ -1,36 +1,86 @@
+<style>
+    .course-item:nth-child(1) {
+        width: 15%;
+        padding: 40px 0;
+    }
+
+    .course-item:nth-child(2) {
+        width: 15%;
+        padding: 40px 0;
+    }
+
+    .course-item:nth-child(3) {
+        width: 15%;
+        height: 75px;
+        padding: 40px 0;
+    }
+
+    .course-item:nth-child(4) {
+        width: 35%;
+        padding: 0;
+    }
+    .course-item:nth-child(5) {
+        width: 20%;
+        padding: 50px 0;
+    }
+
+    .course-item{
+        min-height: 143px;
+    }
+</style>
+
 <!-- Modal -->
 <div class = "course-wrapper" id = "myModal" role = "dialog"
      aria-labelledby = "myModalLabel" aria-hidden = "false">
     <div class="course-name">
         <p>TOEIC 800+</p>
+        <div class="btn-course">
+            <button class="btn btn-danger" type="button">Tham gia</button>
+            <button class="btn" type="button" ng-click="modalCancel()">Cancel</button>
+        </div>
     </div>
 
     <div class="course-result">
-        <p class="course-title">Kết quả sau chương trinh học (tối thiểu)</p>
-       <ul>
-           <li>- Điểm Toeic > 900.</li>
-       </ul>
-    </div>
-
-    <div class="course-requirement">
-        <p class="course-title">Yêu cầu học viên</p>
+        <p class="course-title">TARGET - MỤC TIÊU</p>
         <ul>
-            <li>- Học viên PRO. Mục tiêu Max TOEIC</li>
+            <li>- Điểm Toeic &ge; 900.</li>
         </ul>
     </div>
 
     <div class="course-schedule">
-        <p class="course-title">Lộ trình học</p>
-        <img src="images/course_detail/S&R.png" width="420px">
+        <p class="course-title">SCHEDULES - LỘ TRÌNH HỌC</p>
+        <p class="course-block-1">03 THÁNG - <span>75 bài</span></p>
+        <div class="course-content">
+            <div class="course-item">Hướng dẫn đề thi IIG <span><br> 1 bài</span></div>
+            <div class="course-item">Kỹ năng làm bài<span><br> 5 bài</span></div>
+            <div class="course-item">Longman Real Actual Test<span><br> 5 bài</span></div>
+            <div class="course-item">
+                <div class="course-write">Jim’s Toeic 1000 Reading Comprehension<span> <br> 10 bài</span></div>
+                <div class="course-speak">Jim’s Toeic Listening Comprehension<span><br> 10 bài</span> </div>
+            </div>
+            <div class="course-item">EST<span><br> 12 bài</span></div>
+        </div>
+        <p style="clear: both" class="course-block-1">Review + Test định kì - <span>32 bài</span></p>
+    </div>
+
+    <div class="course-requirement">
+        <p class="course-title">REQUIREMENTS - YÊU CẦU</p>
+        <ul>
+            <li>- Học viên có điểm Toeic đầu vào cao > 750.</li>
+            <li>- TARGET - MỤC TIÊU đặt ra là đạt điểm Toeic tuyệt đối .</li>
+        </ul>
     </div>
 
     <div class="course-guild">
-        <p class="course-title">Giáo trình sử dụng</p>
+        <p class="course-title">REFERENCE MATERIALS - TÀI LIỆU THAM KHẢO</p>
         <ul>
-            <li>- Hướng dẫn đề thi Toeic IIG</li>
+            <li>- Longman Real Actual Test</li>
+            <li>- Jim’s Toeic 1000 Reading Comprehension </li>
+            <li>- Jim’s Toeic Listening Comprehension</li>
+            <li>- ETS</li>
         </ul>
     </div>
-    <div class="modal-footer cancelButton">
-        <button class="btn btn-primary" type="button" ng-click="modalCancel()">Đóng</button>
-    </div>
+    <!--<div class="modal-footer cancelButton">-->
+    <!--<button class="btn btn-primary" type="button" ng-click="modalCancel()">Close</button>-->
+    <!--</div>-->
 </div><!-- /.modal -->

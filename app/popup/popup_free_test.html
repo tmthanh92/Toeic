@@ -3,44 +3,55 @@
      aria-labelledby = "myModalLabel" aria-hidden = "false">
     <div class="course-name">
         <p>TOEIC SPEAKING & WRITING</p>
+        <div class="btn-course">
+            <button class="btn btn-danger" type="button">Tham gia</button>
+            <button class="btn" type="button" ng-click="modalCancel()">Cancel</button>
+        </div>
     </div>
 
+
     <div class="course-result">
-        <p class="course-title">Kết quả sau chương trinh học (tối thiểu)</p>
+        <p class="course-title">TARGET - MỤC TIÊU</p>
        <ul>
            <li>- Giao tiếp công sở lưu loát.</li>
            <li>- Chinh phục 2 kĩ năng nâng cao Speaking – Writing</li>
            <li>- Hoàn thiện 4 kĩ năng Nghe – Nói – Đọc Viết.</li>
-           <li>- Điểm Toeic > 500.</li>
+           <li>- Điểm Toeic &ge; 500.</li>
        </ul>
     </div>
 
+    <div class="course-schedule">
+        <p class="course-title">SCHEDULES - LỘ TRÌNH HỌC</p>
+        <p class="course-block-1">03 THÁNG - <span>57 bài</span></p>
+        <div class="course-content">
+            <div class="course-item">Tổng quan về Toeic S & R <span>10 bài</span></div>
+            <div class="course-item">Phát âm căn bản <span>5 bài</span></div>
+            <div class="course-item">
+                <div class="course-write">Writing - <span>10 bài</span></div>
+                <div class="course-speak">Speaking - <span>12 bài</span> </div>
+            </div>
+            <div class="course-item">Full Test <span>10 bài</span></div>
+        </div>
+        <p style="clear: both" class="course-block-1">Đánh chữ 10 ngón (không giới hạn)</p>
+    </div>
+
     <div class="course-requirement">
-        <p class="course-title">Yêu cầu học viên</p>
+        <p class="course-title">REQUIREMENTS - YÊU CẦU</p>
         <ul>
-            <li>- Nắm rõ cấu trúc đề, tiêu chí đánh giá của từng phần.</li>
-            <li>- Hướng lộ trình rõ ràng.</li>
-            <li>- Chú trọng phát âm, ngữ điệu, chất lượng và sự đa dạng của câu.</li>
+            <li>- Học viên đã có kiến thức cơ bản và muốn chinh phục 4 kĩ năng, giao tiếp lưu loát trong môi trường công sở.</li>
         </ul>
     </div>
 
-    <div class="course-schedule">
-        <p class="course-title">Lộ trình học</p>
-        <img src="images/course_detail/S&R.png" width="420px">
-    </div>
-
     <div class="course-guild">
-        <p class="course-title">Giáo trình sử dụng</p>
+        <p class="course-title">REFERENCE MATERIALS - TÀI LIỆU THAM KHẢO</p>
         <ul>
-            <li>- Tổng quan về TOEIC S&W</li>
-            <li>- Phát âm cơ bản</li>
             <li>- Tactics for TOEIC Speaking and Writing Tests</li>
             <li>- Tomato TOEIC Speaking</li>
             <li>- Tomato TOEIC Writing</li>
             <li>- Collins Practice Tests for TOEIC Test</li>
         </ul>
     </div>
-    <div class="modal-footer cancelButton">
-        <button class="btn btn-primary" type="button" ng-click="modalCancel()">Close</button>
-    </div>
+    <!--<div class="modal-footer cancelButton">-->
+        <!--<button class="btn btn-primary" type="button" ng-click="modalCancel()">Close</button>-->
+    <!--</div>-->
 </div><!-- /.modal -->

@@ -25,7 +25,7 @@
     function showCourseDetail(templateName, controllerName) {
         /*$('#myModal').modal('show');*/
       var modalInstance = $uibModal.open({
-        animation: true,
+        animation: false,
         templateUrl: templateName,
         controller: controllerName,
         windowClass: 'modal-window',

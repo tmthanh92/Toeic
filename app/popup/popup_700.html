@@ -1,40 +1,67 @@
+<style>
+    .course-item {
+        min-height: 82px;
+    }
+
+    .course-item:nth-child(3) {
+        padding: 5px 0;
+    }
+    .course-item:nth-child(4) {
+        padding: 5px 0;
+    }
+</style>
+
 <!-- Modal -->
 <div class = "course-wrapper" id = "myModal" role = "dialog"
      aria-labelledby = "myModalLabel" aria-hidden = "false">
     <div class="course-name">
-        <p>TOEIC 0 -> 700+</p>
+        <p>TOEIC 400 - 750+</p>
+        <div class="btn-course">
+            <button class="btn btn-danger" type="button">Tham gia</button>
+            <button class="btn" type="button" ng-click="modalCancel()">Cancel</button>
+        </div>
     </div>
 
     <div class="course-result">
-        <p class="course-title">Kết quả sau chương trinh học (tối thiểu)</p>
-       <ul>
-           <li>- Điểm Toeic > 550.</li>
-       </ul>
-    </div>
-
-    <div class="course-requirement">
-        <p class="course-title">Yêu cầu học viên</p>
+        <p class="course-title">TARGET - MỤC TIÊU</p>
         <ul>
-            <li>- Điểm Toeic > 250.</li>
-            <li>- Học viên đã từng học anh văn và có kiến thức cơ bản nhưng đã không học lại trong một thời gian dài.</li>
+            <li>- Giao tiếp công sở lưu loát.</li>
+            <li>- Điểm Toeic &ge; 550.</li>
         </ul>
     </div>
 
     <div class="course-schedule">
-        <p class="course-title">Lộ trình học</p>
-        <img src="images/course_detail/S&R.png" width="420px">
+        <p class="course-title">SCHEDULES - LỘ TRÌNH HỌC</p>
+        <p class="course-block-1">03 THÁNG - <span>71 bài</span></p>
+        <div class="course-content">
+            <div class="course-item">Hướng dẫn đề thi IIG<span><br> 1 bài</span></div>
+            <div class="course-item">Big Step 1+2 <span><br> 30 bài</span></div>
+            <div class="course-item">
+                Kỹ năng làm bài<span><br><br> 5 bài</span>
+            </div>
+            <div class="course-item">Economy 5 <span><br><br> 20 bài</span></div>
+        </div>
+        <p style="clear: both" class="course-block-1">Review + Test định kì - <span> 15 bài</span></p>
+    </div>
+
+    <div class="course-requirement">
+        <p class="course-title">REQUIREMENTS - YÊU CẦU</p>
+        <ul>
+            <li>- Học viên khóa 250+.</li>
+            <li>- Học viên đã từng học anh văn và có kiến thức cơ bản nhưng đã không học lại trong một thời gian dài.</li>
+        </ul>
     </div>
 
     <div class="course-guild">
-        <p class="course-title">Giáo trình sử dụng</p>
+        <p class="course-title">REFERENCE MATERIALS - TÀI LIỆU THAM KHẢO</p>
         <ul>
-            <li>- Hướng dẫn đề thi Toeic IIG</li>
-            <li>- Big Step 1+ Big Step 2</li>
-            <li>- Kĩ năng làm bài (Longman)</li>
+            <li>- Big Step 1</li>
+            <li>- Big Step 2</li>
+            <li>- Longman</li>
             <li>- Economy 5</li>
         </ul>
     </div>
-    <div class="modal-footer cancelButton">
-        <button class="btn btn-primary" type="button" ng-click="modalCancel()">Đóng</button>
-    </div>
+    <!--<div class="modal-footer cancelButton">-->
+    <!--<button class="btn btn-primary" type="button" ng-click="modalCancel()">Close</button>-->
+    <!--</div>-->
 </div><!-- /.modal -->
