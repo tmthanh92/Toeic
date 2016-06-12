@@ -11,10 +11,10 @@
             <input type="button" value="Start" class="btn btn-primary" ng-disabled="vm.isDataError" ng-click="vm.startTest()" />
         </div>
     </div>
-    <div class="wrapper-test-content" ng-show="vm.isShowExam">
-        <div class="index-question-block">
+    <div class="wrapper-test-content" ng-show="vm.isShowExam" selected-answers>
+        <div class="index-question-block" scrollto-questions>
             <div class="timer-block">
-                <div data-minutes-left="0.5" class="timer"></div>
+                <div class="timer"></div>
             </div>
             <ul>
                 <li ng-repeat="data in vm.examinationData" ng-if="data.MySelf == 'question'" data-question-target="{{$index}}">{{data.question.question_title}}</li>
@@ -29,7 +29,7 @@
         <div class="container">
             <div class="col-lg-3 col-md-3 col-sm-12"></div>
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <form id="entry-test-frm" ng-submit="entrytestfrm.$valid && vm.sendTest()" name="entrytestfrm" method="post" novalidate>
+                <form validate-submit id="entry-test-frm" ng-submit="entrytestfrm.$valid && vm.sendTest()" name="entrytestfrm" method="post" novalidate>
                     <div ng-repeat="data in vm.examinationData">
                         <div ng-if="data.MySelf == 'part'" class="part-block">{{data.partTbl.part_title}}{{data.partTbl.part_content}}</div>
                         <div ng-if="data.MySelf == 'topic'" class="topic-block">
@@ -54,7 +54,7 @@
                     <hr>
                     <div class="pull-right">
                         <input type="button" value="Làm lại" class="btn btn-primary large" ng-click="vm.resetTest()">
-                        <input type="submit" value="Nộp bài" class="btn btn-success large">
+                        <input type="submit" value="Nộp bài" class="btn btn-success large" ng-disabled="vm.isDisableSubmitBtn">
                     </div>
                 </form>
             </div>
@@ -83,36 +83,3 @@
 
     </div>
 </div>
-
-<script>
-    $('#entry-test-frm').on('submit', function() {
-        var emptyCount = 0;
-        var indexQuestions = $('.index-question-block').find('li');
-        $('.question-block').each(function() {
-            var found = false;
-            var idAttr = $(this).attr('id');
-            var id = idAttr.split('q').length > 1 ? idAttr.split('q')[1] : '';
-            $(this).find('input[type=radio]').each(function() {
-                if ($(this).prop('checked')) {
-                    found = true;
-                    return;
-                }
-            });
-            if (!found) {
-                emptyCount++;
-                if (!isNaN(parseInt(id))) {
-                    indexQuestions.filter(function () {
-                        if ($(this).data('question-target') == id) {
-                            $(this).css({ 'background': '#FDB53F' });
-                        }
-                    });
-                }
-            }
-        });
-        if (emptyCount > 0) {           
-            return false;
-        }
-        return true;
-    });
-
-</script>

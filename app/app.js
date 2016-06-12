@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app', ['ngRoute', 'ngCookies', 'password-verify', 'auto-active', 'ui.bootstrap', 'ngAnimate' ])
+    .module('app', ['ngRoute', 'ngCookies', 'password-verify', 'auto-active', 'entry-test', 'ui.bootstrap', 'ngAnimate' ])
     .config(config);
   /*  .run(run);*/
     /*window.fbAsyncInit = function() {
