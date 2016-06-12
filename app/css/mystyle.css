@@ -275,7 +275,6 @@ span.socialText {
   -moz-box-shadow: 0 0 10px #ccc;
   -webkit-box-shadow: 0 0 10px #ccc;
   box-shadow: 0 0 10px #ccc;
-  cursor: pointer;
 }
 
 .wide {
@@ -453,4 +452,10 @@ body {
 
 .fanpage a:hover {
     color: #FFC000;
+}
+
+
+ /*Jet Menu*/
+.jetmenu a {
+    transition: 0.1ms;
 }
