@@ -30,8 +30,11 @@
                     <input type="password" name="password" placeholder="Mật khẩu*" class="form-control" ng-model="vm.password" required>
 
                   </div>
-                  <div ng-if="vm.isLogginSubmit" class="error-message-label">
+                  <div ng-if="vm.isLogginSubmit && !vm.isValidAccount" class="error-message-label">
                     <div ng-show="loginform.password.$error.required">Vui lòng nhập mật khẩu!</div>
+                  </div>
+                  <div class="error-message-label">
+                    <div ng-show="vm.isValidAccount">Sai username hoặc password !</div>
                   </div>
                 </div>
                 <div class="form-group">
@@ -74,6 +77,7 @@
                   <div ng-if="vm.isRegSubmit" class="error-message-label">
                     <div ng-show="registerform.email.$error.required">Vui lòng nhập địa chỉ Email!</div>
                     <div ng-show="registerform.email.$error.email">Địa chỉ Email không hợp lệ</div>
+                    <div ng-show="vm.existedEmail">Địa chỉ Email đã tồn tại !</div>
                   </div>
                 </div>
                 <div class="form-group">

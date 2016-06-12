@@ -56,16 +56,16 @@
                   <li class="active"><a href="#/home"><i class="fa fa-home"></i> Trang chủ</a></li>
                   <li><a href="#/intro">Giới thiệu</a></li>
                   <li><a href="#/course">Chương trình học</a>
-                      <ul class="dropdown">
+                      <!--<ul class="dropdown">  
                         <li><a href="#">FREE TEST</a></li>
                         <li><a href="#">TOEIC 450+</a></li>
                         <li><a href="#">TOEIC 700+</a></li>
                         <li><a href="#">TOEIC 800+</a></li>
                         <li><a href="#">TOEIC S&amp;W</a></li>
-                      </ul>
+                      </ul>-->
                     </li>
-                  <!--<li><a href="#/news">Thông tin</a></li>-->
-                  <!--<li><a href="#/lib">Thư viện</a></li>-->
+                  <li><a href="#/news">Thông tin</a></li>
+                  <li><a href="#/lib">Thư viện</a></li>
                   <li class="right"><a href="#/contact"><i class="fa fa-envelope-o"></i> Liên hệ</a></li>
                 </ul>
               </div>
@@ -77,7 +77,7 @@
             </ul>
             <ul class="logged-section topmenu pull-right" ng-show="loginCtr.isLoggingIn" ng-cloak>
                 <span>Xin chào : {{loginCtr.loggedUser}}</span>
-                <li><a href="#" ng-click="vm.logOut">Thoát</a></li>
+                <li><a href="#" ng-click="loginCtr.logOut()">Thoát</a></li>
             </ul>
           <!-- end col 9-->
         </div>

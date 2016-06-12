@@ -84,9 +84,9 @@
             /* Dummy authentication for testing, uses $timeout to simulate api call
              ----------------------------------------------*/
                 var response;
-                UserService.GetByUsername(username)
+                UserService.Login(username,password)
                     .then(function (user) {
-                        if (user !== null && user.password === password) {
+                        if (user !== null && user.isLogged === true) {
                             response = { success: true };
                         } else {
                             response = { success: false, message: 'Username or password is incorrect' };

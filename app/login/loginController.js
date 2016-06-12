@@ -4,24 +4,46 @@
 (function() {
   'use strict';
 
-  function LoginController($location, AuthenticationService, FlashService, UserService, FbLoginService, GoogleLoginService) {
+  function LoginController($rootScope,$cookieStore,$window,$location, AuthenticationService, FlashService, UserService, FbLoginService, GoogleLoginService) {
     var vm = this;
-
+    vm.isValidAccount = false;
     vm.isLoggingIn = false;
     vm.loggedUser = "";
     vm.isLogginSubmit = false;
     vm.isRegSubmit = false;
+    vm.existedEmail = false;
+    var existedUser = $cookieStore.get('globals');
+    if(existedUser !== null && existedUser!== undefined)
+    {
+      if(existedUser.currentUser !== null && existedUser.currentUser !== undefined)
+      {
+        if(existedUser.currentUser.username !== null && existedUser.currentUser.username !== undefined)
+        {
+          vm.loggedUser = existedUser.currentUser.username;
+          vm.isLoggingIn = true;
+        }
+      }
+    }
     function login() {
+
       vm.dataLoading = true;
       AuthenticationService.Login(vm.username, vm.password, function(response) {
-        if (response.success) {
+        if (response.success)
+        {
           AuthenticationService.SetCredentials(vm.username, vm.password);
-          $location.path('/home');
           vm.isLoggingIn = true;
-        } else {
+          vm.loggedUser = vm.username;
+          $('#loginmodal').modal('hide');
+          //$location.path('/login');
+          $window.location.href = '/Toeic/app/index.html';
+          //alert('Dang nhap thanh cong');
+        } else
+        {
         /*  FlashService.Error(response.message);
           vm.dataLoading = false;*/
+          vm.isValidAccount = true;
           vm.isLoggingIn = false;
+          AuthenticationService.ClearCredentials();
         }
       });
     }
@@ -30,11 +52,25 @@
       vm.dataLoading = true;
       UserService.Create(vm.user)
         .then(function(response) {
-          if (response.success) {
-            FlashService.Success('Registration successful', true);
-            $location.path('/login');
+          if (response.isLogged) {
+            if(response.email !== null && response.email !== '')
+            {
+              //FlashService.Success('Registration successful', true);
+              AuthenticationService.SetCredentials(response.email, response.password);
+              vm.isLoggingIn = true;
+              vm.loggedUser = response.username;
+              $('#loginmodal').modal('hide');
+              $window.location.href = '/Toeic/app/index.html';
+              //$location.path('/login');
+            }
+            else {
+              //FlashService.Error(response);
+              vm.existedEmail = true;
+              vm.dataLoading = false;
+            }
           } else {
-            FlashService.Error(response.message);
+            //FlashService.Error(response);
+            vm.existedEmail = true;
             vm.dataLoading = false;
           }
         });
@@ -42,6 +78,8 @@
 
     function logOut() {
       vm.isLoggingIn = false;
+      AuthenticationService.ClearCredentials();
+      $window.location.href = '/Toeic/app/index.html';
     }
 
 
@@ -101,7 +139,7 @@
     vm.googleLogin = googleLogin;
   }
 
-  LoginController.$inject = ['$location', 'AuthenticationService', 'FlashService', 'UserService', 'FbLoginService', 'GoogleLoginService'];
+  LoginController.$inject = ['$rootScope','$cookieStore','$window','$location', 'AuthenticationService', 'FlashService', 'UserService', 'FbLoginService', 'GoogleLoginService'];
 
   angular
     .module('app')

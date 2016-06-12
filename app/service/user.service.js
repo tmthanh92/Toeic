@@ -8,7 +8,7 @@
     UserService.$inject = ['$http'];
     function UserService($http) {
         var service = {};
-
+        var url_host = 'http://localhost/SeeEnglish/api/';
         service.GetAll = GetAll;
         service.GetById = GetById;
         service.GetByUsername = GetByUsername;
@@ -16,8 +16,13 @@
         service.Update = Update;
         service.Delete = Delete;
         service.SendContactInfo = SendContactInfo;
-
+        service.Login = Login;
         return service;
+
+        function Login(username,password)
+        {
+            return $http.post(url_host + 'user/login',{'username':username,'password':password}).then(handleSuccess, handleError('Login failed!'));
+        }
 
         function GetAll() {
             return $http.get('http://localhost:2958/api/users').then(handleSuccess, handleError('Error getting all users'));
