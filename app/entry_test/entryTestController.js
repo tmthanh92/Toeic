@@ -4,7 +4,7 @@
 (function () {
 
     function TestController($location, AuthenticationService, FlashService, UserService, FbLoginService, $q, $http, $uibModal, $scope) {
-        var timerSeconds = 10000;
+        var timerSeconds = 10000000;
         var vm = this;
         vm.isDisableSubmitBtn = false;
         vm.sendTest = sendTest;
@@ -16,7 +16,7 @@
         vm.isShowExam = false;
         function GetQuestionData() {
             var deferred = $q.defer();
-            $http.get('http://localhost:3521/Api/Examination').
+            $http.get('http://localhost/SeeEnglish/Api/Examination').
                 success(function (data, status, headers, config) {
                     deferred.resolve(data);
                 }).

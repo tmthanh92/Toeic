@@ -459,3 +459,8 @@ body {
 .jetmenu a {
     transition: 0.1ms;
 }
+
+.topic-block pre {
+    border: none;
+    word-break: normal ;
+}
