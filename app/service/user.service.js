@@ -61,7 +61,7 @@
         }
 
         function SendContactInfo(contactUserInfo) {
-            return $http.post('http://localhost:3521/api/guest', contactUserInfo, {
+            return $http.post('http://localhost/SeeEnglish/api/guest', contactUserInfo, {
                     headers: {
                         'Content-Type': 'application/json'
                     }
