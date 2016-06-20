@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="css/popup.css">
 </head>
 
-<body>
+<body ng-controller="LoginController as loginCtr">
   <div id="wrapper">
     <div class="topbar">
       <div class="container">
@@ -34,13 +34,20 @@
         <!-- end col-lg-6-->
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <p class="fanpage"><a href="https://www.facebook.com/seeenglish" target="_blank">www.facebook.com/seeenglish</a></p>
+          <ul class="login-section pull-right" ng-hide="loginCtr.isLoggingIn">
+            <li><a href="#" onclick="event.preventDefault();" data-toggle="modal" data-target="#loginmodal"> Đăng nhập / Đăng ký</a></li>
+          </ul>
+          <ul class="logged-section topmenu pull-right" ng-show="loginCtr.isLoggingIn" ng-cloak>
+            <span>Xin chào : {{loginCtr.loggedUser}}</span>
+            <li><a href="#" ng-click="loginCtr.logOut()">Thoát</a></li>
+          </ul>
         </div>
         <div ng-include src="'login/login.html'"></div>
       </div>
     </div>
     <header class="header-wrapper">
       <div class="container">
-        <div class="site-header clearfix" ng-controller="LoginController as loginCtr">
+        <div class="site-header clearfix">
           <div class="col-lg-4 col-md-4 col-sm-12 title-area pull-left" id="logo">
             <div id="title" class="site-title">
               <a href="#/home" title=""><img src="images/logosee2.png" alt=""></a>
@@ -72,13 +79,13 @@
             </div>
             <!-- nav-->
           </div>
-            <ul class="login-section topmenu pull-right" ng-hide="loginCtr.isLoggingIn">
-                <li><a href="#" onclick="event.preventDefault();" data-toggle="modal" data-target="#loginmodal"> Đăng nhập / Đăng ký</a></li>
-            </ul>
-            <ul class="logged-section topmenu pull-right" ng-show="loginCtr.isLoggingIn" ng-cloak>
-                <span>Xin chào : {{loginCtr.loggedUser}}</span>
-                <li><a href="#" ng-click="loginCtr.logOut()">Thoát</a></li>
-            </ul>
+            <!--<ul class="login-section topmenu pull-right" ng-hide="loginCtr.isLoggingIn">-->
+                <!--<li><a href="#" onclick="event.preventDefault();" data-toggle="modal" data-target="#loginmodal"> Đăng nhập / Đăng ký</a></li>-->
+            <!--</ul>-->
+            <!--<ul class="logged-section topmenu pull-right" ng-show="loginCtr.isLoggingIn" ng-cloak>-->
+                <!--<span>Xin chào : {{loginCtr.loggedUser}}</span>-->
+                <!--<li><a href="#" ng-click="loginCtr.logOut()">Thoát</a></li>-->
+            <!--</ul>-->
           <!-- end col 9-->
         </div>
         <!-- end site header-->

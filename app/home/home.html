@@ -9,7 +9,7 @@
 </section>-->
 <div class="container wrapper-test-content">
 <div class="col-lg-7 col-md-7 col-sm-12" >
-  <div class="parent" >
+  <div class="parent" data-toggle="tooltip" data-placement="left" title="THAM GIA">
     <a class="wide" href="#/test" id="free_test">
       <p>FREE TEST</p>
     </a>
@@ -18,7 +18,7 @@
         SEE ENGLISH sẽ trực tiếp hỗ trợ bạn phân tích và đánh giá miễn phí để cải thiện nó. <a href="#" onclick="event.preventDefault();"><span>XEM CHI TIẾT→</span></a></p>
     </div>
   </div>
-  <div class="parent">
+  <div class="parent" data-toggle="tooltip" data-placement="left" title="THAM GIA">
     <a class="wide" href="#">
       <p>TOEIC</p>
       <p>0 → 450+</p>
@@ -27,7 +27,7 @@
       <p>Dành cho học viên mất căn bản hoàn toàn về ngữ pháp và từ vựng. <a href="#" onclick="event.preventDefault();" ng-click="vm.showCourseDetail('popup/popup_450.html', 'PopupController');"><span>XEM CHI TIẾT→</span></a></p>
     </div>
   </div>
-  <div class="parent">
+  <div class="parent" data-toggle="tooltip" data-placement="left" title="THAM GIA">
     <a class="wide" href="#">
       <p>TOEIC</p>
       <p>400 → 700+</p>
@@ -36,7 +36,7 @@
       <p>Dành cho học viên có điểm Toeic 250+, đã từng học anh văn và có kiến thức cơ bản nhưng không sử dụng tiếng Anh trong một thời gian dài. <a href="#" onclick="event.preventDefault();" ng-click="vm.showCourseDetail('popup/popup_700.html', 'PopupController');"><span>XEM CHI TIẾT→</span></a></p>
     </div>
   </div>
-  <div class="parent">
+  <div class="parent" data-toggle="tooltip" data-placement="left" title="THAM GIA">
     <a class="wide" href="#">
       <p>TOEIC</p>
       <p>800+</p>
@@ -45,7 +45,7 @@
       <p>Dành cho học viên có điểm Toeic cao. Mục tiêu tiếp theo là đạt điểm tuyệt đối Toeic. <a href="#" onclick="event.preventDefault();" ng-click="vm.showCourseDetail('popup/popup_800.html', 'PopupController');"><span>XEM CHI TIẾT→</span></a></p>
     </div>
   </div>
-  <div class="parent">
+  <div class="parent" data-toggle="tooltip" data-placement="left" title="THAM GIA">
     <a class="wide" href="#">
       <p>TOEIC</p>
       <p>S & W</p>
@@ -102,3 +102,10 @@
     </div>
 </div>
 <div ng-include ng-hide="true" src="'popup/popup.html'"></div>
+<script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip({
+        template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow" style="border-left-color: #3B5998"></div><div class="tooltip-inner" style="background: #3B5998"></div></div>'
+    })
+  })
+</script>
