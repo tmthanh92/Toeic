@@ -332,9 +332,14 @@ body {
   text-transform: uppercase;
   font-size: 15px;
 }
+
+.login-section a:hover {
+  color: #FFC000 ;
+}
+
 .logged-section {
-  color : #3C599B;
-  margin: 20px 45px 0 0;
+  color : #fff;
+  margin: 10px 45px 0 0;
   list-style-type: none;
 }
 
@@ -466,4 +471,12 @@ body {
 .topic-block pre {
     border: none;
     word-break: normal ;
+}
+
+.tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 10%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000000;
 }

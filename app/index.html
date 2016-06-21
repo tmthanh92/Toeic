@@ -37,7 +37,7 @@
           <ul class="login-section pull-right" ng-hide="loginCtr.isLoggingIn">
             <li><a href="#" onclick="event.preventDefault();" data-toggle="modal" data-target="#loginmodal"> Đăng nhập / Đăng ký</a></li>
           </ul>
-          <ul class="logged-section topmenu pull-right" ng-show="loginCtr.isLoggingIn" ng-cloak>
+          <ul class="logged-section pull-right" ng-show="loginCtr.isLoggingIn" ng-cloak>
             <span>Xin chào : {{loginCtr.loggedUser}}</span>
             <li><a href="#" ng-click="loginCtr.logOut()">Thoát</a></li>
           </ul>

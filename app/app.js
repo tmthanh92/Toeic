@@ -3,8 +3,8 @@
 
   angular
     .module('app', ['ngRoute', 'ngCookies', 'password-verify', 'auto-active', 'entry-test', 'ui.bootstrap', 'ngAnimate' ])
-    .config(config)
-    .run(run);
+    .config(config);
+    // .run(run);
     /*window.fbAsyncInit = function() {
         FB.init({
             appId      : '270946653240452',
