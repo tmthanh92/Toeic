@@ -130,7 +130,7 @@
                                         <div ng-show="contactform.email.$error.email">Địa chỉ Email không hợp lệ</div>
                                     </div>
                                 </div>
-                                <div class="form-group" ng-value="vm.guest.Type=vm.temp.Type">
+                                <div class="form-group" ng-init="vm.guest.Type=vm.temp.Type">
                                     <label class="radio-inline"><input type="radio" name="career" ng-model="vm.guest.Type" ng-value="1">Học sinh</label>
                                     <label class="radio-inline"><input type="radio" name="career" ng-model="vm.guest.Type" ng-value="2">Sinh viên</label>
                                     <label class="radio-inline"><input type="radio" name="career" ng-model="vm.guest.Type" ng-value="3">Đi làm</label>

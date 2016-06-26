@@ -31,32 +31,42 @@
             vm.isDataError = false;
         });
         function confirmSubmitTest() {
-            $confirm({ text: 'Submit test ?', title: '' })
-                .then(function () {
-                    checkExam();
-                    $('#result-modal').modal({
-                        show: 'false'
-                    });
-                    angular.forEach($scope.contactform.$error.required, function (field) {
-                        switch (field.$name) {
-                            case 'name':
-                                field.$viewValue = vm.temp.FullName ? vm.temp.FullName : undefined;
-                                break;
-                            case 'phone':
-                                field.$viewValue = vm.temp.PhoneNumber ? vm.temp.PhoneNumber : undefined;
-                                break;
-                            case 'email':
-                                field.$viewValue = vm.temp.Email ? vm.temp.Email : undefined;
-                                break;
-                        }
-                    });
-                }, function () {
-
+            $confirm({
+                text: 'Bạn chưa hoàn thành bài thi. Nếu tiếp tục nộp bài những câu chưa hoàn thành sẽ không được tính điểm.',
+                title: '',
+                ok: 'Tiếp tục',
+                cancel: 'Đóng'
+            }).then(function () {
+                $('#entry-test-frm').find('input[type="radio"]').attr('disabled', true);
+                checkExam();
+                $('#result-modal').modal({
+                    show: 'false'
                 });
+                angular.forEach($scope.contactform.$error.required, function (field) {
+                    switch (field.$name) {
+                        case 'name':
+                            field.$viewValue = vm.temp.FullName ? vm.temp.FullName : undefined;
+                            break;
+                        case 'phone':
+                            field.$viewValue = vm.temp.PhoneNumber ? vm.temp.PhoneNumber : undefined;
+                            break;
+                        case 'email':
+                            field.$viewValue = vm.temp.Email ? vm.temp.Email : undefined;
+                            break;
+                    }
+                });
+            }, function () {
+
+            });
         }
         function timeOutTest() {
-            $confirm({ text: 'Time out !', title: '' })
-                .then(function () {
+            $('#entry-test-frm').find('input[type="radio"]').attr('disabled', true);
+            $confirm({ 
+                text: 'Bạn đã hết thời gian làm bài.', 
+                title: '',
+                ok: 'Tiếp tục',
+                cancel: 'Đóng' 
+            }).then(function () {
                     checkExam();
                     $('#result-modal').modal({
                         show: 'false'
@@ -74,12 +84,10 @@
                                 break;
                         }
                     });
-                }, function () {
-
                 });
         }
 
-        
+
         function checkExam() {
             vm.isDisableSubmitBtn = true;
             var data = vm.examinationData,
