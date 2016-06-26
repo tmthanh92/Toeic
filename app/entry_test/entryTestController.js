@@ -3,20 +3,20 @@
  */
 (function () {
 
-    function TestController($location, AuthenticationService, FlashService, UserService, FbLoginService, $q, $http, $uibModal, $scope) {
-        var timerSeconds = 10000000;
+    function TestController($location, AuthenticationService, FlashService, UserService, FbLoginService, $q, $http, $uibModal, $scope, $confirm) {
         var vm = this;
         vm.isDisableSubmitBtn = false;
-        vm.sendTest = sendTest;
-        vm.startTest = startTest;
-        vm.resetTest = resetTest;
+        vm.sendGuestContact = sendGuestContact;
         vm.isDataError = true;
         vm.examinationData = [];
-        vm.isShowIntro = true;
-        vm.isShowExam = false;
+        vm.confirmSubmitTest = confirmSubmitTest;
+        $scope.isShowIntro = true;
+        $scope.isShowExam = false;
+        $scope.timeOutTest = timeOutTest;
+
         function GetQuestionData() {
             var deferred = $q.defer();
-            $http.get('http://localhost/SeeEnglish/Api/Examination').
+            $http.get('http://localhost:3521/Api/Examination').
                 success(function (data, status, headers, config) {
                     deferred.resolve(data);
                 }).
@@ -30,23 +30,57 @@
             vm.examinationData = data;
             vm.isDataError = false;
         });
+        function confirmSubmitTest() {
+            $confirm({ text: 'Submit test ?', title: '' })
+                .then(function () {
+                    checkExam();
+                    $('#result-modal').modal({
+                        show: 'false'
+                    });
+                    angular.forEach($scope.contactform.$error.required, function (field) {
+                        switch (field.$name) {
+                            case 'name':
+                                field.$viewValue = vm.temp.FullName ? vm.temp.FullName : undefined;
+                                break;
+                            case 'phone':
+                                field.$viewValue = vm.temp.PhoneNumber ? vm.temp.PhoneNumber : undefined;
+                                break;
+                            case 'email':
+                                field.$viewValue = vm.temp.Email ? vm.temp.Email : undefined;
+                                break;
+                        }
+                    });
+                }, function () {
 
-        function startTest() {
-            $('.timer').countdown(new Date().getTime() + timerSeconds)
-                .on('update.countdown', function (event) {
-                    var $this = $(this);
-                    $this.html(event.strftime('<span>%H:%M:%S</span>'));
-                })
-                .on('finish.countdown', function (event) {
-                    sendTest();
-                    $scope.$apply();
                 });
-            vm.isShowIntro = false;
-            vm.isShowExam = true;
+        }
+        function timeOutTest() {
+            $confirm({ text: 'Time out !', title: '' })
+                .then(function () {
+                    checkExam();
+                    $('#result-modal').modal({
+                        show: 'false'
+                    });
+                    angular.forEach($scope.contactform.$error.required, function (field) {
+                        switch (field.$name) {
+                            case 'name':
+                                field.$viewValue = vm.temp.FullName ? vm.temp.FullName : undefined;
+                                break;
+                            case 'phone':
+                                field.$viewValue = vm.temp.PhoneNumber ? vm.temp.PhoneNumber : undefined;
+                                break;
+                            case 'email':
+                                field.$viewValue = vm.temp.Email ? vm.temp.Email : undefined;
+                                break;
+                        }
+                    });
+                }, function () {
+
+                });
         }
 
-        function sendTest() {
-            $('.timer').countdown('stop');
+        
+        function checkExam() {
             vm.isDisableSubmitBtn = true;
             var data = vm.examinationData,
                 correctedAnswer = 0,
@@ -69,38 +103,41 @@
 
             $scope.totalAnswer = totalAnswer;
             $scope.correctedAnswer = correctedAnswer;
-            
-            $('#result-modal').modal({
-                show: 'false'
-            });
-
         }
-
-        function resetTest() {
-            vm.isDisableSubmitBtn = false;
-            for (var countData = 0, length = vm.examinationData.length; countData < length; countData++) {
-                if (vm.examinationData[countData].MySelf === 'question') {
-                    if (vm.examinationData[countData].answervalue) {
-                        vm.examinationData[countData].answervalue = null;
-                    }
+        function sendGuestContact() {
+            vm.guest.ExaminationId = 1;
+            vm.guest.CorrectAnswerNum = $scope.correctedAnswer;
+            $http.post('http://localhost:3521/api/guest/submit_test', vm.guest, {
+                headers: {
+                    'Content-Type': 'application/json'
                 }
-            }
-            $scope.correctedAnswer = 0;
-            $('.index-question-block').find('li').each(function () {
-                $(this).css({ 'background': 'white' });
             });
-            $('.timer').countdown(new Date().getTime() + timerSeconds)
-                .on('update.countdown', function (event) {
-                    var $this = $(this);
-                    $this.html(event.strftime('<span>%H:%M:%S</span>'));
-                })
-                .on('finish.countdown', function (event) {
-                    sendTest();
-                });
         }
+        // function resetTest() {
+        //     vm.isDisableSubmitBtn = false;
+        //     for (var countData = 0, length = vm.examinationData.length; countData < length; countData++) {
+        //         if (vm.examinationData[countData].MySelf === 'question') {
+        //             if (vm.examinationData[countData].answervalue) {
+        //                 vm.examinationData[countData].answervalue = null;
+        //             }
+        //         }
+        //     }
+        //     $scope.correctedAnswer = 0;
+        //     $('.index-question-block').find('li').each(function () {
+        //         $(this).css({ 'background': 'white' });
+        //     });
+        //     $('.timer').countdown(new Date().getTime() + timerSeconds)
+        //         .on('update.countdown', function (event) {
+        //             var $this = $(this);
+        //             $this.html(event.strftime('<span>%H:%M:%S</span>'));
+        //         })
+        //         .on('finish.countdown', function (event) {
+        //             sendTest();
+        //         });
+        // }
     }
 
-    TestController.inject = ['$location', 'AuthenticationService', 'FlashService', 'UserService', 'FbLoginService', '$q', '$http', '$uibModal', '$scope'];
+    TestController.inject = ['$location', 'AuthenticationService', 'FlashService', 'UserService', 'FbLoginService', '$q', '$http', '$uibModal', '$scope', '$confirm'];
 
     var app = angular.module('app');
     app.controller('TestController', TestController);

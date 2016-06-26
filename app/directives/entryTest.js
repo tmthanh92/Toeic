@@ -2,6 +2,28 @@
     'use strict';
     var app = angular.module('entry-test', []);
 
+    app.directive("startTest", function () {
+        return {
+            restrict: 'A',
+            scope: false,
+            link: function (scope, element, attrs, ctrl) {
+                element.bind('click', function (e) {
+                    $('.timer').countdown(new Date().getTime() + 10000)
+                        .on('update.countdown', function (event) {
+                            var $this = $(this);
+                            $this.html(event.strftime('<span>%H:%M:%S</span>'));
+                        })
+                        .on('finish.countdown', function (event) {
+                            scope.timeOutTest();
+                        });
+                    scope.isShowIntro = false;
+                    scope.isShowExam = true;
+                    scope.$apply();
+                });
+            }
+        };
+    });
+
     app.directive("scrolltoQuestions", function () {
         return {
             restrict: 'A',

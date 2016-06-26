@@ -464,3 +464,7 @@ body {
     border: none;
     word-break: normal ;
 }
+
+.guest-exam-form{
+  margin: 30px;
+}

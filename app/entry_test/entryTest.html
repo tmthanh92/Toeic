@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="wrapper-intro-test" ng-show="vm.isShowIntro">
+    <div class="wrapper-intro-test" ng-show="isShowIntro">
         <div class="title-block">Full Test</div>
         <div class="intro-content-block">
             <p class="content">
@@ -7,11 +7,34 @@
                 dạng đề thi TOEIC thực tế do đội ngũ giáo viên của See English kì công biên soạn. Bài làm của các bạn sẽ
                 được chấm điểm và thông báo kết quả ngay sau khi các bạn nộp bài.
             </p>
+        </div>
+        <div class="guest-exam-form">
+            <label id="contact-form-title">Gửi thông tin để nhận các tài liệu tiếng anh và được tư vấn <span class="title">MIỄN PHÍ</span></label>
+            <div class="form-group">
+                <input autocomplete="off" type="text" name="name-temp" placeholder="Tên" class="form-control" ng-model="vm.temp.FullName"
+                />
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" type="number" name="phone-temp" placeholder="Số điện thoại" class="form-control" ng-model="vm.temp.PhoneNumber"
+                />
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" type="email" name="email-temp" placeholder="Email" class="form-control" ng-model="vm.temp.Email"
+                />
+            </div>
+            <div class="form-group" ng-init="vm.temp.Type='1'">
+                <label class="radio-inline"><input type="radio" name="career-temp" ng-model="vm.temp.Type" ng-value="1">Học sinh</label>
+                <label class="radio-inline"><input type="radio" name="career-temp" ng-model="vm.temp.Type" ng-value="2">Sinh viên</label>
+                <label class="radio-inline"><input type="radio" name="career-temp" ng-model="vm.temp.Type" ng-value="3">Đi làm</label>
+            </div>
+        </div>
+
+        <div class="intro-content-block">
             <p class="note">Bạn hãy click vào nút Start bên dưới để bắt đầu làm bài. Chúc các bạn đạt điểm số thật cao!</p>
-            <input type="button" value="Start" class="btn btn-primary" ng-disabled="vm.isDataError" ng-click="vm.startTest()" />
+            <input type="button" value="Start" class="btn btn-primary" ng-disabled="vm.isDataError" start-test />
         </div>
     </div>
-    <div class="wrapper-test-content" ng-show="vm.isShowExam" selected-answers>
+    <div class="wrapper-test-content" ng-show="isShowExam" selected-answers>
         <div class="index-question-block" scrollto-questions>
             <div class="timer-block">
                 <div class="timer"></div>
@@ -29,12 +52,15 @@
         <div class="container">
             <div class="col-lg-3 col-md-3 col-sm-12"></div>
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <form validate-submit id="entry-test-frm" ng-submit="entrytestfrm.$valid && vm.sendTest()" name="entrytestfrm" method="post" novalidate>
+                <form validate-submit id="entry-test-frm" ng-submit="entrytestfrm.$valid && vm.sendTest()" name="entrytestfrm" method="post"
+                    novalidate>
                     <div ng-repeat="data in vm.examinationData">
                         <div ng-if="data.MySelf == 'part'" class="part-block">{{data.partTbl.part_title}}: {{data.partTbl.part_content}}</div>
                         <div ng-if="data.MySelf == 'topic'" class="topic-block">
                             <p>{{data.TopicTbl.topic_title}}</p>
-                            <p><pre>{{data.TopicTbl.topic_content}}</pre></p>
+                            <p>
+                                <pre>{{data.TopicTbl.topic_content}}</pre>
+                            </p>
                         </div>
                         <div id="q{{$index}}" class="question-block" ng-if="data.MySelf == 'question'">
                             <div class="title">Câu {{data.question.question_title}}</div>
@@ -43,7 +69,7 @@
                             <div class="answer-block">
                                 <div class="control-group">
                                     <label ng-repeat="answer in data.answers" class="control control&#45;&#45;radio">
-                                    <input type="radio" ng-model="data.answervalue" name="a{{answer.answer.question_id}}" value="{{answer.answer.answer_title}}" required> {{answer.answer.answer_title}}. {{answer.answer.answer_content}}
+                                    <input type="radio" ng-model="data.answervalue" name="a{{answer.answer.question_id}}" value="{{answer.answer.answer_title}}"> {{answer.answer.answer_title}}. {{answer.answer.answer_content}}
                                     <div class="control__indicator"></div>
                                 </label>
                                 </div>
@@ -53,14 +79,15 @@
 
                     <hr>
                     <div class="pull-right">
-                        <input type="button" value="Làm lại" class="btn btn-primary large" ng-click="vm.resetTest()">
-                        <input type="submit" value="Nộp bài" class="btn btn-success large" ng-disabled="vm.isDisableSubmitBtn">
+                        <!--<input type="button" value="Làm lại" class="btn btn-primary large" ng-click="vm.resetTest()">-->
+                        <input type="button" value="Nộp bài" class="btn btn-success large" ng-disabled="vm.isDisableSubmitBtn" ng-click="vm.confirmSubmitTest()">
                     </div>
                 </form>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12"></div>
         </div>
     </div>
+
     <div class="wrapper-result-block">
         <div id="result-modal" class="modal fade" role="dialog">
             <div class="modal-dialog">
@@ -70,11 +97,47 @@
                         <h4 class="modal-title"></h4>
                     </div>
                     <div class="modal-body">
-                        <p>Kết quả bài Test của bạn: <label>{{correctedAnswer}}/{{totalAnswer}} câu đúng</label></p>
+                        <form id="form-send-guest-info" name="contactform" ng-submit="contactform.$valid && vm.sendGuestContact()" novalidate>
+                            <div class="guest-exam-form">
+                                <p>Kết quả bài Test của bạn: <label>{{correctedAnswer}}/{{totalAnswer}} câu đúng</label></p>
+                                <label id="contact-form-title">Gửi thông tin để nhận các tài liệu tiếng anh và được tư vấn <span class="title">MIỄN PHÍ</span></label>
+                                <div class="form-group">
+                                    <input autocomplete="off" id="name" type="text" name="name" placeholder="Tên" class="form-control" ng-model="vm.guest.FullName"
+                                        ng-value="vm.temp.FullName" required />
+                                    <div ng-if="vm.isContactSubmit" class="error-message-label">
+                                        <div ng-show="contactform.name.$error.required">Vui lòng nhập họ và tên!</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input autocomplete="off" id="phone" type="number" name="phone" placeholder="Số điện thoại" class="form-control" ng-model="vm.guest.PhoneNumber"
+                                        ng-value="vm.temp.PhoneNumber" required />
+                                    <div ng-if="vm.isContactSubmit" class="error-message-label">
+                                        <div ng-show="contactform.phone.$error.required">Vui lòng nhập số điện thoại!</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input autocomplete="off" id="email" type="email" name="email" placeholder="Email" class="form-control" ng-model="vm.guest.Email"
+                                        ng-value="vm.temp.Email" required />
+                                    <div ng-if="vm.isContactSubmit" class="error-message-label">
+                                        <div ng-show="contactform.email.$error.required">Vui lòng nhập địa chỉ Email!</div>
+                                        <div ng-show="contactform.email.$error.email">Địa chỉ Email không hợp lệ</div>
+                                    </div>
+                                </div>
+                                <div class="form-group" ng-value="vm.guest.Type=vm.temp.Type">
+                                    <label class="radio-inline"><input type="radio" name="career" ng-model="vm.guest.Type" ng-value="1">Học sinh</label>
+                                    <label class="radio-inline"><input type="radio" name="career" ng-model="vm.guest.Type" ng-value="2">Sinh viên</label>
+                                    <label class="radio-inline"><input type="radio" name="career" ng-model="vm.guest.Type" ng-value="3">Đi làm</label>
+                                </div>
+                                <div>
+                                    <input type="submit" ng-click="vm.isContactSubmit=true" value="GỬI" class="btn btn-primary btn-submit-guest">
+                                </div>
+                            </div>
+                        </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="vm.resetTest()">Làm lại</button>
+                        <!--<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="vm.resetTest()">Làm lại</button>-->
                         <button type="button" class="btn btn-success" data-dismiss="modal">Đóng</button>
+                        </form>
                     </div>
                 </div>
 

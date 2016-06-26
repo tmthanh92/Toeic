@@ -62,31 +62,31 @@
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
           <label id="contact-form-title">Gửi thông tin để nhận các tài liệu tiếng anh và được tư vấn <span class="title">MIỄN PHÍ</span></label>
           <div class="form-group">
-            <input autocomplete="off" id="name" type="text" name="name" placeholder="Nhập Tên*" class="form-control" ng-model="vm.contact.fullname" required/>
+            <input autocomplete="off" id="name" type="text" name="name" placeholder="Nhập Tên*" class="form-control" ng-model="vm.contact.FullName" required/>
             <div ng-if="vm.isContactSubmit" class="error-message-label">
               <div ng-show="contactform.name.$error.required">Vui lòng nhập họ và tên!</div>
             </div>
           </div>
           <div class="form-group">
-            <input autocomplete="off" id="phone" type="number" name="phone" placeholder="Số điện thoại*" class="form-control" ng-model="vm.contact.phoneNumber" required/>
+            <input autocomplete="off" id="phone" type="number" name="phone" placeholder="Số điện thoại*" class="form-control" ng-model="vm.contact.PhoneNumber" required/>
             <div ng-if="vm.isContactSubmit" class="error-message-label">
               <div ng-show="contactform.phone.$error.required">Vui lòng nhập số điện thoại!</div>
             </div>
           </div>
           <div class="form-group">
-            <input autocomplete="off" id="email" type="email" name="email" placeholder="Email*" class="form-control" ng-model="vm.contact.email" required/>
+            <input autocomplete="off" id="email" type="email" name="email" placeholder="Email*" class="form-control" ng-model="vm.contact.Email" required/>
             <div ng-if="vm.isContactSubmit" class="error-message-label">
               <div ng-show="contactform.email.$error.required">Vui lòng nhập địa chỉ Email!</div>
               <div ng-show="contactform.email.$error.email">Địa chỉ Email không hợp lệ</div>
             </div>
           </div>
            <div class="form-group">
-               <textarea placeholder="Lời nhắn" id="comment" name="comment" class="form-control"></textarea>
+               <textarea placeholder="Lời nhắn" id="comment" name="comment" ng-model="vm.contact.Notes" class="form-control"></textarea>
            </div>
-          <div class="form-group" ng-init="vm.contact.notes='Học sinh'">
-            <label class="radio-inline"><input type="radio" name="career" ng-model="vm.contact.notes" ng-value="'Học sinh'">Học sinh</label>
-            <label class="radio-inline"><input type="radio" name="career" ng-model="vm.contact.notes" ng-value="'Sinh viên'">Sinh viên</label>
-            <label class="radio-inline"><input type="radio" name="career" ng-model="vm.contact.notes" ng-value="'Đi làm'">Đi làm</label>
+          <div class="form-group" ng-init="vm.contact.Type=1">
+            <label class="radio-inline"><input type="radio" name="career" ng-model="vm.contact.Type" ng-value="1">Học sinh</label>
+            <label class="radio-inline"><input type="radio" name="career" ng-model="vm.contact.Type" ng-value="2">Sinh viên</label>
+            <label class="radio-inline"><input type="radio" name="career" ng-model="vm.contact.Type" ng-value="3">Đi làm</label>
           </div>
         </div>
         
