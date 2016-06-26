@@ -8,7 +8,7 @@
             scope: false,
             link: function (scope, element, attrs, ctrl) {
                 element.bind('click', function (e) {
-                    $('.timer').countdown(new Date().getTime() + 10000)
+                    $('.timer').countdown(new Date().getTime() + 10000000)
                         .on('update.countdown', function (event) {
                             var $this = $(this);
                             $this.html(event.strftime('<span>%H:%M:%S</span>'));

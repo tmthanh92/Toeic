@@ -127,6 +127,7 @@
        FbLoginService.fbLogin().then(function(data) {
         vm.isLoggingIn = true;
         vm.loggedUser = data.name;
+         AuthenticationService.SetCredentials(data.name, response.password);
          $('#loginmodal').modal('hide');
        /*  $location.path('/home');*/
        });

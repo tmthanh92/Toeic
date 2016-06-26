@@ -242,7 +242,7 @@ span.socialText {
   display: -webkit-flex; /* Safari */
   display: flex;
   width: 100%;
-  height: 80px;
+  min-height: 80px;
   margin: 20px 0 0 0;
 }
 
@@ -321,10 +321,10 @@ body {
 }
 
 .login-section {
-  border: solid 1px;
-  padding: 5px 20px 5px 20px;
-  background: #3C599B;
-  margin: 0px 35px 10px 0;
+  /*border: solid 1px;*/
+  /*padding: 5px 20px 5px 20px;*/
+  /*background: #3C599B;*/
+  margin: 10px 0 0 0;
 }
 
 .login-section a {
@@ -332,11 +332,17 @@ body {
   text-transform: uppercase;
   font-size: 15px;
 }
+
+.login-section a:hover {
+  color: #FFC000 ;
+}
+
 .logged-section {
-  color : #3C599B;
-  margin: 20px 45px 0 0;
+  color : #fff;
+  margin: 10px 45px 0 0;
   list-style-type: none;
 }
+
 
 .logged-section a{
    font-size: 15px;
@@ -357,7 +363,7 @@ body {
   color: #3C599B;
   margin-top: 5px;
   font-weight: bold;
-  line-height: 15px;
+  line-height: 20px;
 }
 
 .error-message-label{
@@ -448,7 +454,9 @@ body {
 }
 
 .fanpage {
-    text-align: right;  }
+    text-align: right;
+    float: left;
+}
 
 .fanpage a:hover {
     color: #FFC000;
@@ -465,6 +473,13 @@ body {
     word-break: normal ;
 }
 
+.tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 10%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000000;
+}
 .guest-exam-form{
   margin: 30px;
 }
